@@ -1,0 +1,29 @@
+在写代码中遇到规范问题，请及时在此文件中添加并commit
+
+代码规范：
+    尽量用4个空格代替TABLE
+    大括号尽量不新起一行，且在后面立刻跟回车。
+        推荐：
+            for(int i=0; i<=1; i++){
+                int a;
+                ……
+            }
+        不推荐：
+            for(int i=0; i<=1; i++){ int a;
+                ……
+            }
+            for(int i=0; i<=1; i++)
+            { 
+                int a;
+                ……
+            }
+            for(int i=0; i<=1; i++)
+            {   int a;
+                ……
+            }
+            
+    尽可能使用局部变量
+    
+命名规范：
+    一般为表义英文，单词首字母大写，例如分配系统应为AllocationSystem，如果单词过长，可以取单词前三个字母AllSystem或AllSys，并加以注释。
+    遇到冲突，比如说两个UserList，可以命名为UserList_A，UserList_B，其中AB可以是表义单词或缩写，并加以注释。
