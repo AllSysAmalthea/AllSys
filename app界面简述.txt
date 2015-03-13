@@ -1,0 +1,40 @@
+app界面
+
+界面整体描述：
+	未登陆的用户打开app后进入登陆界面，有账号可直接登陆，未注册可进行注册
+	登陆后进入普通界面，普通界面显示一些用户关心内容，以及进入其他界面的入口
+	从普通界面可进入志愿者界面，志愿者界面显示志愿者任务，灾区情况等信息
+	
+
+1、登陆界面
+	edittext: Username
+	edittext: Password
+	button:   Login
+	button:   Register
+
+2、注册界面
+	edittext: Name
+	edittext: Tel
+	edittext: ID
+	edittext: Password
+	edittext: Confirm
+	edittext: addr
+	button:   Done
+
+3、普通界面
+	ImageButton: News  （点击进入新闻简报界面）
+	button:   Exit      
+	button:   Care      （点击进入设置关心的事项选择界面）
+	button:   Location   （点击定位）
+	button:   Safehouse   （点击查看庇护所信息）
+	button:   Survivor   （点击查看幸存者信息）
+	textview: Infor      （显示关心事项的信息）
+	view:     User
+	button:   Volunteer   (点击进入志愿者界面)
+
+4、志愿者界面
+	
+
+后续的说明是简述该部件的作用，仅供设计时参考
+组件请按上述标注的名字命名
+若有设计不合理的地方，或者缺失功能，可自行修改
