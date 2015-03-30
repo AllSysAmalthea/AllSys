@@ -25,10 +25,10 @@ public class ManInfo {
 	
 	/*
 	 * 使用{}分隔的字符串构造
-	 * 格式为{name}{race}{ID}{huji}{bloodtype}{relativeName}{relativeContact}
+	 * 格式为{"name"}{"race"}{"ID"}{"huji"}{"bloodtype"}{"relativeName"}{"relativeContact"}
 	 */
 	ManInfo(String info) {
-		Pattern pattern=Pattern.compile("\\{.*\\}");
+		Pattern pattern=Pattern.compile("\\{\".*\"\\}");
 		Matcher matcher=pattern.matcher(info);
 		name		=matcher.group(1);
 		race		=matcher.group(2);
@@ -60,15 +60,15 @@ public class ManInfo {
 		return relativeContact;
 	}
 	//返回{}分隔的字符串
-	public String getInfo() {
+	public String getInfo() throws Exception {
 		String ret;
-		ret="{"+getName()+"}";
-		ret+="{"+getRace()+"}";
-		ret+="{"+getID()+"}";
-		ret+="{"+getHuji()+"}";
-		ret+="{"+getBloodtype()+"}";
-		ret+="{"+getRelativeName()+"}";
-		ret+="{"+getRelativeContact()+"}";
+		ret="{\""+getName()+"}\"";
+		ret+="{\""+getRace()+"\"}";
+		ret+="{\""+getID()+"\"}";
+		ret+="{\""+getHuji()+"\"}";
+		ret+="{\""+getBloodtype()+"\"}";
+		ret+="{\""+getRelativeName()+"\"}";
+		ret+="{\""+getRelativeContact()+"\"}";
 		return ret;
 	}
 }

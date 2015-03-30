@@ -33,7 +33,7 @@ public class Victim extends ManInfo {
 		else if (status==2)
 			ret+=((InjuredVictim)this).getInfo();
 		else
-			throw new Exception("灾民状态异常，");
+			throw new Exception("灾民状态异常");
 		return ret;
 	}
 
