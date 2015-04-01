@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.uml.msl.model" version="7.0.0"><feature description="" name="com.ibm.xtools.ruml.feature" url="" version="7.0.0"/></signature>?>
+<?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.mmi.ui.signatures.diagram" version="7.0.0"><feature description="" name="Rational 建模平台（com.ibm.xtools.rmp）" url="" version="7.0.0"/></signature>?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.0/notation" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.2/Umlnotation" xmi:id="_LTBtINhMEeSye-CW2yp2uw" name="对象图">
+  <eAnnotations xmi:id="_LTBtIdhMEeSye-CW2yp2uw" source="uml2.diagrams" references="_LTBtIthMEeSye-CW2yp2uw">
+    <contents xmi:type="notation:Diagram" xmi:id="_LTBtIthMEeSye-CW2yp2uw" type="Freeform" name="Main">
+      <children xmi:id="_PICP0NhMEeSye-CW2yp2uw">
+        <children xmi:id="_PICP0dhMEeSye-CW2yp2uw" type="ImageCompartment">
+          <layoutConstraint xmi:type="notation:Size" xmi:id="_PICP0thMEeSye-CW2yp2uw" width="1296" height="1296"/>
+        </children>
+        <children xmi:id="_PICP09hMEeSye-CW2yp2uw" type="Stereotype"/>
+        <children xmi:id="_PICP1NhMEeSye-CW2yp2uw" type="Name"/>
+        <children xmi:id="_PICP1dhMEeSye-CW2yp2uw" type="ValueSpecification"/>
+        <children xmi:id="_PICP1thMEeSye-CW2yp2uw" type="TaggedValueSet"/>
+        <children xmi:id="_PICP19hMEeSye-CW2yp2uw" type="SlotCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_PICP2NhMEeSye-CW2yp2uw"/>
+        </children>
+        <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_PICP2dhMEeSye-CW2yp2uw" fontName="微软雅黑" showStereotype="Image"/>
+        <element xmi:type="uml:InstanceSpecification" href="platform:/resource/课上实验/空模型.emx#_yAEBcNgGEeSw67l0T6ZeIg?对象图/user?"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PICP2thMEeSye-CW2yp2uw" x="6270" y="1190" width="5132" height="1561"/>
+      </children>
+      <children xmi:id="_PICP29hMEeSye-CW2yp2uw">
+        <children xmi:id="_PICP3NhMEeSye-CW2yp2uw" type="ImageCompartment">
+          <layoutConstraint xmi:type="notation:Size" xmi:id="_PICP3dhMEeSye-CW2yp2uw" width="1296" height="1296"/>
+        </children>
+        <children xmi:id="_PICP3thMEeSye-CW2yp2uw" type="Stereotype"/>
+        <children xmi:id="_PICP39hMEeSye-CW2yp2uw" type="Name"/>
+        <children xmi:id="_PICP4NhMEeSye-CW2yp2uw" type="ValueSpecification"/>
+        <children xmi:id="_PICP4dhMEeSye-CW2yp2uw" type="TaggedValueSet"/>
+        <children xmi:id="_PICP4thMEeSye-CW2yp2uw" type="SlotCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_PICP49hMEeSye-CW2yp2uw"/>
+        </children>
+        <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_PICP5NhMEeSye-CW2yp2uw" fontName="微软雅黑" showStereotype="Image"/>
+        <element xmi:type="uml:InstanceSpecification" href="platform:/resource/课上实验/空模型.emx#_HEjH4dgHEeSw67l0T6ZeIg?对象图/subAdministrator?"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PICP5dhMEeSye-CW2yp2uw" x="1507" y="3412" width="6826" height="1905"/>
+      </children>
+      <children xmi:id="_PIIWcNhMEeSye-CW2yp2uw">
+        <children xmi:id="_PIIWcdhMEeSye-CW2yp2uw" type="ImageCompartment">
+          <layoutConstraint xmi:type="notation:Size" xmi:id="_PIIWcthMEeSye-CW2yp2uw" width="1296" height="1296"/>
+        </children>
+        <children xmi:id="_PIIWc9hMEeSye-CW2yp2uw" type="Stereotype"/>
+        <children xmi:id="_PIIWdNhMEeSye-CW2yp2uw" type="Name"/>
+        <children xmi:id="_PIIWddhMEeSye-CW2yp2uw" type="ValueSpecification"/>
+        <children xmi:id="_PIIWdthMEeSye-CW2yp2uw" type="TaggedValueSet"/>
+        <children xmi:id="_PIIWd9hMEeSye-CW2yp2uw" type="SlotCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_PIIWeNhMEeSye-CW2yp2uw"/>
+        </children>
+        <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_PIIWedhMEeSye-CW2yp2uw" fontName="微软雅黑" showStereotype="Image"/>
+        <element xmi:type="uml:InstanceSpecification" href="platform:/resource/课上实验/空模型.emx#_PspmIdgHEeSw67l0T6ZeIg?对象图/volunteer?"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PIIWethMEeSye-CW2yp2uw" x="11641" y="3386" width="4762" height="1561"/>
+      </children>
+      <children xmi:id="_PIIWe9hMEeSye-CW2yp2uw">
+        <children xmi:id="_PIIWfNhMEeSye-CW2yp2uw" type="ImageCompartment">
+          <layoutConstraint xmi:type="notation:Size" xmi:id="_PIIWfdhMEeSye-CW2yp2uw" width="1296" height="1296"/>
+        </children>
+        <children xmi:id="_PIIWfthMEeSye-CW2yp2uw" type="Stereotype"/>
+        <children xmi:id="_PIIWf9hMEeSye-CW2yp2uw" type="Name"/>
+        <children xmi:id="_PIIWgNhMEeSye-CW2yp2uw" type="ValueSpecification"/>
+        <children xmi:id="_PIIWgdhMEeSye-CW2yp2uw" type="TaggedValueSet"/>
+        <children xmi:id="_PIIWgthMEeSye-CW2yp2uw" type="SlotCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_PIIWg9hMEeSye-CW2yp2uw"/>
+        </children>
+        <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_PIIWhNhMEeSye-CW2yp2uw" fontName="微软雅黑" showStereotype="Image"/>
+        <element xmi:type="uml:InstanceSpecification" href="platform:/resource/课上实验/空模型.emx#_TDUnAdgHEeSw67l0T6ZeIg?对象图/Administrator?"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PIIWhdhMEeSye-CW2yp2uw" x="1851" y="6762" width="6111" height="1905"/>
+      </children>
+      <styles xmi:type="umlnotation:UMLDiagramStyle" xmi:id="_LTBtI9hMEeSye-CW2yp2uw"/>
+      <edges xmi:id="_PIIWkdhMEeSye-CW2yp2uw" type="line" source="_PICP29hMEeSye-CW2yp2uw" target="_PICP0NhMEeSye-CW2yp2uw">
+        <styles xmi:type="notation:ConnectorStyle" xmi:id="_PIIWkthMEeSye-CW2yp2uw"/>
+        <element xsi:nil="true"/>
+        <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_PIIWk9hMEeSye-CW2yp2uw" points="[-211, -926, -4127, 1455]$[-211, -2407, -4127, -26]$[1403, -2407, -2513, -26]"/>
+      </edges>
+      <edges xmi:id="_PIIWlNhMEeSye-CW2yp2uw" type="line" source="_PIIWcNhMEeSye-CW2yp2uw" target="_PICP0NhMEeSye-CW2yp2uw">
+        <styles xmi:type="notation:ConnectorStyle" xmi:id="_PIIWldhMEeSye-CW2yp2uw"/>
+        <element xsi:nil="true"/>
+        <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_PIIWlthMEeSye-CW2yp2uw" points="[185, -767, 5371, 1429]$[185, -2222, 5371, -26]$[-2566, -2222, 2620, -26]"/>
+      </edges>
+      <edges xmi:id="_PIIWl9hMEeSye-CW2yp2uw" type="line" source="_PICP29hMEeSye-CW2yp2uw" target="_PIIWe9hMEeSye-CW2yp2uw">
+        <styles xmi:type="notation:ConnectorStyle" xmi:id="_PIIWmNhMEeSye-CW2yp2uw"/>
+        <element xsi:nil="true"/>
+        <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_PIIWmdhMEeSye-CW2yp2uw" points="[-53, 238, -291, -2381]$[-53, 767, -291, -1852]$[-53, 1640, -291, -979]$[-26, 1693, -264, -926]"/>
+        <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_G-WWcNhNEeSye-CW2yp2uw" id="(0.46132433,0.88923883)"/>
+      </edges>
+    </contents>
+  </eAnnotations>
+  <packageImport xmi:id="_LTBtJNhMEeSye-CW2yp2uw">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <profileApplication xmi:id="_LTBtJdhMEeSye-CW2yp2uw">
+    <eAnnotations xmi:id="_LTBtJthMEeSye-CW2yp2uw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
+    </eAnnotations>
+    <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+  </profileApplication>
+  <profileApplication xmi:id="_LTBtJ9hMEeSye-CW2yp2uw">
+    <eAnnotations xmi:id="_LTBtKNhMEeSye-CW2yp2uw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default?"/>
+    </eAnnotations>
+    <appliedProfile href="pathmap://UML2_MSL_PROFILES/Default.epx#_a_S3wNWLEdiy4IqP8whjFA?Default?"/>
+  </profileApplication>
+  <profileApplication xmi:id="_LTBtKdhMEeSye-CW2yp2uw">
+    <eAnnotations xmi:id="_LTBtKthMEeSye-CW2yp2uw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://UML2_MSL_PROFILES/Deployment.epx#_IrdAUMmBEdqBcN1R6EvWUw?Deployment/Deployment?"/>
+    </eAnnotations>
+    <appliedProfile href="pathmap://UML2_MSL_PROFILES/Deployment.epx#_vjbuwOvHEdiDX5bji0iVSA?Deployment?"/>
+  </profileApplication>
+</uml:Model>

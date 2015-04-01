@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.uml.msl.model" version="7.0.0"><feature description="" name="com.ibm.xtools.ruml.feature" url="" version="7.0.0"/></signature>?>
+<?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.mmi.ui.signatures.diagram" version="7.0.0"><feature description="" name="Rational 建模平台（com.ibm.xtools.rmp）" url="" version="7.0.0"/></signature>?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.0/notation" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.2/Umlnotation" xmi:id="_V2krwNhJEeSR07ssT-lgYQ" name="部署图">
+  <eAnnotations xmi:id="_V2krwdhJEeSR07ssT-lgYQ" source="uml2.diagrams" references="_V2krwthJEeSR07ssT-lgYQ">
+    <contents xmi:type="notation:Diagram" xmi:id="_V2krwthJEeSR07ssT-lgYQ" type="Deployment" name="Main">
+      <children xmi:id="_i7TGUNhJEeSR07ssT-lgYQ">
+        <children xmi:id="_i7TGUdhJEeSR07ssT-lgYQ" type="ImageCompartment">
+          <layoutConstraint xmi:type="notation:Size" xmi:id="_i7TGUthJEeSR07ssT-lgYQ" width="1296" height="1296"/>
+        </children>
+        <children xmi:id="_i7TGU9hJEeSR07ssT-lgYQ" type="Stereotype"/>
+        <children xmi:id="_i7TGVNhJEeSR07ssT-lgYQ" type="Name"/>
+        <children xmi:id="_i7TGVdhJEeSR07ssT-lgYQ" type="Parent"/>
+        <children xmi:id="_i7TGVthJEeSR07ssT-lgYQ" type="TaggedValueSet"/>
+        <children xmi:id="_i7TGV9hJEeSR07ssT-lgYQ" type="AttributeCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_i7TGWNhJEeSR07ssT-lgYQ"/>
+        </children>
+        <children xmi:id="_i7TGWdhJEeSR07ssT-lgYQ" type="OperationCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_i7TGWthJEeSR07ssT-lgYQ"/>
+        </children>
+        <children xmi:id="_i7TGW9hJEeSR07ssT-lgYQ" visible="false" type="DeploymentListCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_i7TGXNhJEeSR07ssT-lgYQ"/>
+        </children>
+        <children xmi:id="_i7TGXdhJEeSR07ssT-lgYQ" visible="false" type="NestedNodeListCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_i7TGXthJEeSR07ssT-lgYQ"/>
+        </children>
+        <children xmi:id="_i7TGX9hJEeSR07ssT-lgYQ" visible="false" type="DeploymentShapeCompartment">
+          <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_i7TGYNhJEeSR07ssT-lgYQ"/>
+        </children>
+        <children xmi:id="_i7TGYdhJEeSR07ssT-lgYQ" visible="false" type="NestedNodeShapeCompartment">
+          <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_i7TGYthJEeSR07ssT-lgYQ"/>
+        </children>
+        <children xmi:id="_i7TGY9hJEeSR07ssT-lgYQ" type="StructureCompartment">
+          <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_i7TGZNhJEeSR07ssT-lgYQ"/>
+        </children>
+        <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_i7TGZdhJEeSR07ssT-lgYQ" fontName="微软雅黑" showStereotype="Image"/>
+        <element xmi:type="uml:Node" href="platform:/resource/课上实验/部署图.emx#_tZkpYNgEEeSbtOIGy5pJZQ?部署图/数据库服务器?"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i7TGZthJEeSR07ssT-lgYQ" x="7275" y="1190"/>
+      </children>
+      <children xmi:id="_i7TGZ9hJEeSR07ssT-lgYQ">
+        <children xmi:id="_i7TGaNhJEeSR07ssT-lgYQ" type="ImageCompartment">
+          <layoutConstraint xmi:type="notation:Size" xmi:id="_i7TGadhJEeSR07ssT-lgYQ" width="1296" height="1296"/>
+        </children>
+        <children xmi:id="_i7TGathJEeSR07ssT-lgYQ" type="Stereotype"/>
+        <children xmi:id="_i7TGa9hJEeSR07ssT-lgYQ" type="Name"/>
+        <children xmi:id="_i7TGbNhJEeSR07ssT-lgYQ" type="Parent"/>
+        <children xmi:id="_i7TGbdhJEeSR07ssT-lgYQ" type="TaggedValueSet"/>
+        <children xmi:id="_i7TGbthJEeSR07ssT-lgYQ" type="AttributeCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_i7TGb9hJEeSR07ssT-lgYQ"/>
+        </children>
+        <children xmi:id="_i7TGcNhJEeSR07ssT-lgYQ" type="OperationCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_i7TGcdhJEeSR07ssT-lgYQ"/>
+        </children>
+        <children xmi:id="_i7TGcthJEeSR07ssT-lgYQ" visible="false" type="DeploymentListCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_i7TGc9hJEeSR07ssT-lgYQ"/>
+        </children>
+        <children xmi:id="_i7TGdNhJEeSR07ssT-lgYQ" visible="false" type="NestedNodeListCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_i7TGddhJEeSR07ssT-lgYQ"/>
+        </children>
+        <children xmi:id="_i7TGdthJEeSR07ssT-lgYQ" visible="false" type="DeploymentShapeCompartment">
+          <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_i7TGd9hJEeSR07ssT-lgYQ"/>
+        </children>
+        <children xmi:id="_i7TGeNhJEeSR07ssT-lgYQ" visible="false" type="NestedNodeShapeCompartment">
+          <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_i7TGedhJEeSR07ssT-lgYQ"/>
+        </children>
+        <children xmi:id="_i7TGethJEeSR07ssT-lgYQ" type="StructureCompartment">
+          <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_i7TGe9hJEeSR07ssT-lgYQ"/>
+        </children>
+        <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_i7TGfNhJEeSR07ssT-lgYQ" fontName="微软雅黑" showStereotype="Image"/>
+        <element xmi:type="uml:Node" href="platform:/resource/课上实验/部署图.emx#_0CnZ8NgEEeSbtOIGy5pJZQ?部署图/应用服务器?"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i7TGfdhJEeSR07ssT-lgYQ" x="4755" y="3804"/>
+      </children>
+      <children xmi:id="_i7c3UNhJEeSR07ssT-lgYQ">
+        <children xmi:id="_i7c3UdhJEeSR07ssT-lgYQ" type="ImageCompartment">
+          <layoutConstraint xmi:type="notation:Size" xmi:id="_i7c3UthJEeSR07ssT-lgYQ" width="1296" height="1296"/>
+        </children>
+        <children xmi:id="_i7c3U9hJEeSR07ssT-lgYQ" type="Stereotype"/>
+        <children xmi:id="_i7c3VNhJEeSR07ssT-lgYQ" type="Name"/>
+        <children xmi:id="_i7c3VdhJEeSR07ssT-lgYQ" type="Parent"/>
+        <children xmi:id="_i7c3VthJEeSR07ssT-lgYQ" type="TaggedValueSet"/>
+        <children xmi:id="_i7c3V9hJEeSR07ssT-lgYQ" type="AttributeCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_i7c3WNhJEeSR07ssT-lgYQ"/>
+        </children>
+        <children xmi:id="_i7c3WdhJEeSR07ssT-lgYQ" type="OperationCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_i7c3WthJEeSR07ssT-lgYQ"/>
+        </children>
+        <children xmi:id="_i7c3W9hJEeSR07ssT-lgYQ" visible="false" type="DeploymentListCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_i7c3XNhJEeSR07ssT-lgYQ"/>
+        </children>
+        <children xmi:id="_i7c3XdhJEeSR07ssT-lgYQ" visible="false" type="NestedNodeListCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_i7c3XthJEeSR07ssT-lgYQ"/>
+        </children>
+        <children xmi:id="_i7c3X9hJEeSR07ssT-lgYQ" visible="false" type="DeploymentShapeCompartment">
+          <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_i7c3YNhJEeSR07ssT-lgYQ"/>
+        </children>
+        <children xmi:id="_i7c3YdhJEeSR07ssT-lgYQ" visible="false" type="NestedNodeShapeCompartment">
+          <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_i7c3YthJEeSR07ssT-lgYQ"/>
+        </children>
+        <children xmi:id="_i7c3Y9hJEeSR07ssT-lgYQ" type="StructureCompartment">
+          <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_i7c3ZNhJEeSR07ssT-lgYQ"/>
+        </children>
+        <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_i7c3ZdhJEeSR07ssT-lgYQ" fontName="微软雅黑" showStereotype="Image"/>
+        <element xmi:type="uml:Node" href="platform:/resource/课上实验/部署图.emx#_5KNl4NgEEeSbtOIGy5pJZQ?部署图/APP客户端?"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i7c3ZthJEeSR07ssT-lgYQ" x="1163" y="6587"/>
+      </children>
+      <children xmi:id="_i7c3fthJEeSR07ssT-lgYQ">
+        <children xmi:id="_i7c3f9hJEeSR07ssT-lgYQ" type="ImageCompartment">
+          <layoutConstraint xmi:type="notation:Size" xmi:id="_i7c3gNhJEeSR07ssT-lgYQ" width="1296" height="1296"/>
+        </children>
+        <children xmi:id="_i7c3gdhJEeSR07ssT-lgYQ" type="Stereotype"/>
+        <children xmi:id="_i7c3gthJEeSR07ssT-lgYQ" type="Name"/>
+        <children xmi:id="_i7c3g9hJEeSR07ssT-lgYQ" type="Parent"/>
+        <children xmi:id="_i7c3hNhJEeSR07ssT-lgYQ" type="TaggedValueSet"/>
+        <children xmi:id="_i7c3hdhJEeSR07ssT-lgYQ" type="AttributeCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_i7c3hthJEeSR07ssT-lgYQ"/>
+        </children>
+        <children xmi:id="_i7c3h9hJEeSR07ssT-lgYQ" type="OperationCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_i7c3iNhJEeSR07ssT-lgYQ"/>
+        </children>
+        <children xmi:id="_i7c3idhJEeSR07ssT-lgYQ" visible="false" type="DeploymentListCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_i7c3ithJEeSR07ssT-lgYQ"/>
+        </children>
+        <children xmi:id="_i7c3i9hJEeSR07ssT-lgYQ" visible="false" type="NestedNodeListCompartment">
+          <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_i7c3jNhJEeSR07ssT-lgYQ"/>
+        </children>
+        <children xmi:id="_i7c3jdhJEeSR07ssT-lgYQ" visible="false" type="DeploymentShapeCompartment">
+          <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_i7c3jthJEeSR07ssT-lgYQ"/>
+        </children>
+        <children xmi:id="_i7c3j9hJEeSR07ssT-lgYQ" visible="false" type="NestedNodeShapeCompartment">
+          <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_i7c3kNhJEeSR07ssT-lgYQ"/>
+        </children>
+        <children xmi:id="_i7c3kdhJEeSR07ssT-lgYQ" type="StructureCompartment">
+          <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_i7c3kthJEeSR07ssT-lgYQ"/>
+        </children>
+        <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_i7c3k9hJEeSR07ssT-lgYQ" fontName="微软雅黑" showStereotype="Image"/>
+        <element xmi:type="uml:Node" href="platform:/resource/课上实验/部署图.emx#_AO7l0NgFEeSbtOIGy5pJZQ?部署图/WEB服务器?"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i7c3lNhJEeSR07ssT-lgYQ" x="9827" y="3804"/>
+      </children>
+      <styles xmi:type="umlnotation:UMLDiagramStyle" xmi:id="_V2krw9hJEeSR07ssT-lgYQ"/>
+      <edges xmi:id="_i7c3ldhJEeSR07ssT-lgYQ" source="_i7TGZ9hJEeSR07ssT-lgYQ" target="_i7TGUNhJEeSR07ssT-lgYQ">
+        <children xmi:id="_i7c3lthJEeSR07ssT-lgYQ" visible="false" type="KindLabel">
+          <children xmi:id="_i7c3l9hJEeSR07ssT-lgYQ" type="Stereotype"/>
+          <children xmi:id="_i7c3mNhJEeSR07ssT-lgYQ" type="Kind"/>
+          <children xmi:id="_i7c3mdhJEeSR07ssT-lgYQ" type="Name"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i7c3mthJEeSR07ssT-lgYQ" y="-186"/>
+        </children>
+        <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_i7c3m9hJEeSR07ssT-lgYQ" fontName="微软雅黑" showStereotype="Text"/>
+        <element xmi:type="uml:Usage" href="platform:/resource/课上实验/部署图.emx#_Q9NhANgFEeSbtOIGy5pJZQ?部署图/%3C用途%3E?"/>
+        <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_i7c3nNhJEeSR07ssT-lgYQ" points="[-27, -53, -27, 52]$[-53, -106, -80, -27]"/>
+      </edges>
+      <edges xmi:id="_i7c3ndhJEeSR07ssT-lgYQ" source="_i7c3fthJEeSR07ssT-lgYQ" target="_i7TGZ9hJEeSR07ssT-lgYQ">
+        <children xmi:id="_i7c3nthJEeSR07ssT-lgYQ" type="NameLabel">
+          <children xmi:id="_i7c3n9hJEeSR07ssT-lgYQ" type="Stereotype"/>
+          <children xmi:id="_i7c3oNhJEeSR07ssT-lgYQ" type="Name"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i7c3odhJEeSR07ssT-lgYQ" y="-186"/>
+        </children>
+        <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_i7c3othJEeSR07ssT-lgYQ" fontName="微软雅黑" showStereotype="Text"/>
+        <element xmi:type="uml:Dependency" href="platform:/resource/课上实验/部署图.emx#_cdo3QNgFEeSbtOIGy5pJZQ?部署图/%3C依赖性%3E?"/>
+        <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_i7c3o9hJEeSR07ssT-lgYQ" points="[-27, -53, -27, 52]$[-27, -80, -27, 26]"/>
+        <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_t59MQNhJEeSR07ssT-lgYQ" id="(0.022949712,0.49448636)"/>
+      </edges>
+      <edges xmi:id="_i7mBQNhJEeSR07ssT-lgYQ" source="_i7c3fthJEeSR07ssT-lgYQ" target="_i7TGUNhJEeSR07ssT-lgYQ">
+        <children xmi:id="_i7mBQdhJEeSR07ssT-lgYQ" type="NameLabel">
+          <children xmi:id="_i7mBQthJEeSR07ssT-lgYQ" type="Stereotype"/>
+          <children xmi:id="_i7mBQ9hJEeSR07ssT-lgYQ" type="Name"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i7mBRNhJEeSR07ssT-lgYQ" y="-186"/>
+        </children>
+        <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_i7mBRdhJEeSR07ssT-lgYQ" fontName="微软雅黑" showStereotype="Text"/>
+        <element xmi:type="uml:Dependency" href="platform:/resource/课上实验/部署图.emx#_oCh2wNgFEeSbtOIGy5pJZQ?部署图/%3C依赖性%3E?"/>
+        <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_i7mBRthJEeSR07ssT-lgYQ" points="[-80, -53, 132, 52]$[-159, -106, 52, 0]"/>
+        <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_oh14ENhJEeSR07ssT-lgYQ" id="(0.92503935,0.7835171)"/>
+      </edges>
+      <edges xmi:id="_i7mBR9hJEeSR07ssT-lgYQ" source="_i7c3UNhJEeSR07ssT-lgYQ" target="_i7TGZ9hJEeSR07ssT-lgYQ">
+        <children xmi:id="_i7mBSNhJEeSR07ssT-lgYQ" type="NameLabel">
+          <children xmi:id="_i7mBSdhJEeSR07ssT-lgYQ" type="Stereotype"/>
+          <children xmi:id="_i7mBSthJEeSR07ssT-lgYQ" type="Name"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i7mBS9hJEeSR07ssT-lgYQ" y="-186"/>
+        </children>
+        <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_i7mBTNhJEeSR07ssT-lgYQ" fontName="微软雅黑" showStereotype="Text"/>
+        <element xmi:type="uml:Dependency" href="platform:/resource/课上实验/部署图.emx#_6x8jQNgFEeSbtOIGy5pJZQ?部署图/%3C依赖性%3E?"/>
+        <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_i7mBTdhJEeSR07ssT-lgYQ" points="[26, -53, 26, -53]$[26, -53, 26, -53]"/>
+        <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_i7mBTthJEeSR07ssT-lgYQ" id="(0.88974446,0.35867673)"/>
+        <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_i7mBT9hJEeSR07ssT-lgYQ" id="(0.04095205,0.801509)"/>
+      </edges>
+    </contents>
+  </eAnnotations>
+  <packageImport xmi:id="_V2krxNhJEeSR07ssT-lgYQ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <profileApplication xmi:id="_V2krxdhJEeSR07ssT-lgYQ">
+    <eAnnotations xmi:id="_V2krxthJEeSR07ssT-lgYQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
+    </eAnnotations>
+    <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+  </profileApplication>
+  <profileApplication xmi:id="_V2krx9hJEeSR07ssT-lgYQ">
+    <eAnnotations xmi:id="_V2kryNhJEeSR07ssT-lgYQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default?"/>
+    </eAnnotations>
+    <appliedProfile href="pathmap://UML2_MSL_PROFILES/Default.epx#_a_S3wNWLEdiy4IqP8whjFA?Default?"/>
+  </profileApplication>
+  <profileApplication xmi:id="_V2krydhJEeSR07ssT-lgYQ">
+    <eAnnotations xmi:id="_V2krythJEeSR07ssT-lgYQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://UML2_MSL_PROFILES/Deployment.epx#_IrdAUMmBEdqBcN1R6EvWUw?Deployment/Deployment?"/>
+    </eAnnotations>
+    <appliedProfile href="pathmap://UML2_MSL_PROFILES/Deployment.epx#_vjbuwOvHEdiDX5bji0iVSA?Deployment?"/>
+  </profileApplication>
+</uml:Model>
