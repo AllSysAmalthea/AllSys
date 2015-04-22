@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-public class LogInActivity extends Activity {
+public class RegisterActivity extends Activity {
 
 	
 	
@@ -22,24 +22,14 @@ public class LogInActivity extends Activity {
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);  
-        setContentView(R.layout.activity_log_in); 
+        setContentView(R.layout.activity_register); 
              
         ImageView iv1=(ImageView)findViewById(R.id.myImageView1);
-        iv1.setImageResource(R.drawable.news);
+        iv1.setImageResource(R.drawable.news2);
         
         ImageButton ib1 = (ImageButton)findViewById(R.id.header_left_btn);  
-        Button login = (Button)findViewById(R.id.Login);
         Button register = (Button)findViewById(R.id.Register);
-        register.setOnClickListener(new Button.OnClickListener(){
-        	public void onClick(View v){
-        		Intent intent = new Intent();
-        		intent.setClass(LogInActivity.this, RegisterActivity.class);
-        		
-        		startActivity(intent);
-        		LogInActivity.this.finish();
-        	}
-        });
-        
+            
     }
 
 
