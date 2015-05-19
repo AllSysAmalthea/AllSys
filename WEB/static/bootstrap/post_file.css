@@ -1,0 +1,54 @@
+
+	#file {
+position:relative;
+width:256px;
+height:25px;
+border:1px #99f solid;
+}
+#file input {
+font-size:16px;
+margin:0;
+padding:0;
+position:relative;
+vertical-align:middle;
+outline:none;
+}
+
+#file input[type="text"] {
+border:3px none;
+width:152px;
+z-index:4;
+}
+
+#file input[type="button"] {
+width:54px;
+height:25px;
+z-index:2;
+border:1px #99f solid;     <!---- 更改button样式  --->
+}
+
+#file input[type="file"] {
+position:absolute;
+right:0px;
+height:25px;
+opacity:0;
+z-index:3;
+} 
+#file input[type="submit"]{
+width:50px;
+height:25px;
+border:1px #99f solid; 
+z-index:5;
+}
+#replace input[type="text"]{
+	font-size:16px;
+	height:25px;
+	/*margin:0;*/
+	padding:0;
+	position:relative;
+	vertical-align:middle;
+	border-radius:0px;
+	border:1px #99f solid; 
+}
+
+

@@ -1,0 +1,49 @@
+﻿body {
+	/*font-family:ProximaNovaRgRegular,"Helvetica Neue",Helvetica,sans-serif;*/
+	padding-top: 30px;
+	/*background-color: #FFFFFF;*/
+	background-image: url("../image/bg1.jpg");
+}
+a:hover{
+    text-decoration:none;  /*鼠标放上去有下划线*/
+}
+#footer {
+	height: 60px;
+}
+#push {
+	height: 50px;
+}
+/*  p{ font-size:20px; }  */
+#indexbody {
+	background-color: black;
+	margin:0 auto;
+	padding:0px 0px 0px 0px;
+	border-width:thin;
+	border-style:none none solid none;
+	border-color:#545454;
+	width:970px;
+}
+#fbody {
+	/* board-radius  */
+	background-color: white;
+	margin:0 auto;
+	padding:0px 30px 30px 30px;
+	border-width:thin;
+	border-style:none none solid none;
+	border-color:#545454;
+	width:930px;
+}
+ul{
+	margin-bottom:0;
+}
+.thumbnails
+>li{
+	margin-bottom:0;
+}
+.container{
+	margin: 0 auto;
+	width:920px;
+}
+.row-fluid .span11{
+	width:96%;
+}
