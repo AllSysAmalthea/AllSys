@@ -17,12 +17,28 @@ import android.widget.ImageView;
 public class RegularActivity extends Activity {
 
 	
+	ImageButton Location;
 	
     @SuppressLint("NewApi")
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);  
         setContentView(R.layout.activity_regular); 
+        
+        Location = (ImageButton)findViewById(R.id.Location);
+        
+        Location.setOnClickListener(new Button.OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent();
+        		intent.setClass(RegularActivity.this, Map.class);
+        		
+        		startActivity(intent);
+			}
+        	
+        });
                        
     }
 

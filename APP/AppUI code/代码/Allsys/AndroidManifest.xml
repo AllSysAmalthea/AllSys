@@ -9,12 +9,27 @@
         android:targetSdkVersion="18" />
 
     <application
+        android:name="com.example.allsys.ApplicationUtil"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.NoTitleBar">
+        
+        <meta-data android:name="com.baidu.lbsapi.API_KEY" 
+            android:value="KXI4OQIoLwhy9ffNMxHwKuGt"/>
+        
+         <activity
+            android:name="com.example.allsys.Map"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.ADD_SHORTCUT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
         <activity
-            android:name="com.example.allsys.LogInActivity"
+            android:name="com.example.allsys.RegularActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +37,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <activity
+            android:name="com.example.allsys.LogInActivity"
+            android:label="@string/app_name" >
+            
+        </activity>
+        
         <activity android:name="com.example.allsys.RegisterActivity"></activity>
+        
     </application>
 
 </manifest>
