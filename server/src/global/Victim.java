@@ -22,7 +22,7 @@ public class Victim extends ManInfo {
 		Matcher matcher=pattern.matcher(info);
 		setStatus((int)(info.charAt(matcher.start()+1)-'0'));
 	}
-
+	@Override
 	public String getInfo() throws Exception {
 		String ret=super.getID();
 		ret+="{"+status+"}";
