@@ -2,12 +2,12 @@ package Message;
 
 import java.io.Serializable;
 
-public class register extends Message implements Serializable{
+public class register extends MessageAck implements Serializable{
 
 	public String username,tel,id,password,blood,addr;
 	
-	public register(int t,String u, String te, String i, String p, String b, String a) {
-		super(t);
+	public register(String u, String te, String i, String p, String b, String a) {
+		super(3);
 		username = u;
 		tel = te;
 		id = i;
