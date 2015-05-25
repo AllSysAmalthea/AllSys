@@ -137,13 +137,9 @@ CREATE TABLE IF NOT EXISTS `victim` (
   `ID` varchar(18) DEFAULT NULL,
   `Vstatus` varchar(10) DEFAULT NULL,
   `Vfamily` varchar(40) DEFAULT NULL,
-  `DVtime` datetime DEFAULT NULL,
-  `DVplace` varchar(40) DEFAULT NULL,
-  `Corpse` varchar(60) DEFAULT NULL,
+  `Vtime` datetime DEFAULT NULL,
+  `Vplace` varchar(40) DEFAULT NULL,
   `Injury` varchar(10) DEFAULT NULL,
-  `Ivplace` varchar(30) DEFAULT NULL,
-  `MVTime` datetime DEFAULT NULL,
-  `MVplace` varchar(40) DEFAULT NULL,
   `remark` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
