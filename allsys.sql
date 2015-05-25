@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `administrator` (
   `vono` int(11) DEFAULT NULL,
   `Bossno` int(11) DEFAULT NULL,
   `Adremark` varchar(40) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `area` (
   `Supplies` varchar(40) DEFAULT NULL,
   `Report` varchar(100) DEFAULT NULL,
   `Aremark` varchar(300) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -59,68 +59,18 @@ CREATE TABLE IF NOT EXISTS `area` (
 CREATE TABLE IF NOT EXISTS `citizen` (
   `ID` varchar(18) NOT NULL,
   `Name` varchar(20) DEFAULT NULL,
+  `Pass` varchar(20) DEFAULT NULL,
   `Sex` int(11) DEFAULT NULL,
   `Race` varchar(10) DEFAULT NULL,
   `Home` varchar(40) DEFAULT NULL,
   `Bloodtype` int(11) DEFAULT NULL,
   `Ano` int(11) DEFAULT NULL,
   `Level` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 -- --------------------------------------------------------
 
---
--- 表的结构 `dead`
---
-
-CREATE TABLE IF NOT EXISTS `dead` (
-  `Vno` int(11) NOT NULL,
-  `DVtime` datetime DEFAULT NULL,
-  `DVplace` varchar(40) DEFAULT NULL,
-  `Corpse` varchar(60) DEFAULT NULL,
-  `DVremark` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- 表的结构 `injured`
---
-
-CREATE TABLE IF NOT EXISTS `injured` (
-  `Vno` int(11) NOT NULL,
-  `Injury` varchar(10) DEFAULT NULL,
-  `Ivplace` varchar(30) DEFAULT NULL,
-  `Ivremark` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- 表的结构 `missing`
---
-
-CREATE TABLE IF NOT EXISTS `missing` (
-  `Vno` int(11) NOT NULL,
-  `MVTime` datetime DEFAULT NULL,
-  `MVplace` varchar(40) DEFAULT NULL,
-  `MVremark` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- 表的结构 `receivingsu`
---
-
-CREATE TABLE IF NOT EXISTS `receivingsu` (
-  `Suno` int(11) DEFAULT NULL,
-  `Recvtime` datetime DEFAULT NULL,
-  `Recvplace` varchar(40) DEFAULT NULL,
-  `Recvremark` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
 
 --
 -- 表的结构 `shelter`
@@ -136,21 +86,10 @@ CREATE TABLE IF NOT EXISTS `shelter` (
   `Shlimit` int(11) DEFAULT NULL,
   `Adno` int(11) DEFAULT NULL,
   `Shremark` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
---
--- 表的结构 `storesu`
---
-
-CREATE TABLE IF NOT EXISTS `storesu` (
-  `Suno` int(11) DEFAULT NULL,
-  `Shno` int(11) DEFAULT NULL,
-  `Stremark` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
 
 --
 -- 表的结构 `supplies`
@@ -163,8 +102,15 @@ CREATE TABLE IF NOT EXISTS `supplies` (
   `Sustate` int(11) DEFAULT NULL,
   `Suamount` int(11) DEFAULT NULL,
   `Suunit` varchar(20) DEFAULT NULL,
-  `Suremark` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `Suremark` varchar(100) DEFAULT NULL,
+  `Recvtime` datetime DEFAULT NULL,
+  `Recvplace` varchar(40) DEFAULT NULL,
+  `Shno` int(11) DEFAULT NULL,
+  `Trsrc` int(11) DEFAULT NULL,
+  `Trdst` int(11) DEFAULT NULL,
+  `Trstart` datetime DEFAULT NULL,
+  `Trend` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -178,37 +124,7 @@ CREATE TABLE IF NOT EXISTS `task` (
   `Adno` int(11) DEFAULT NULL,
   `Tstatus` int(11) DEFAULT NULL,
   `Tremark` varchar(300) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- 表的结构 `transsu`
---
-
-CREATE TABLE IF NOT EXISTS `transsu` (
-  `Suno` int(11) DEFAULT NULL,
-  `Trsrc` int(11) DEFAULT NULL,
-  `Trdst` int(11) DEFAULT NULL,
-  `Trstart` datetime DEFAULT NULL,
-  `Trend` datetime DEFAULT NULL,
-  `Trremark` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- 表的结构 `usingsu`
---
-
-CREATE TABLE IF NOT EXISTS `usingsu` (
-  `Suno` int(11) DEFAULT NULL,
-  `Shno` int(11) DEFAULT NULL,
-  `Usstart` datetime DEFAULT NULL,
-  `Usend` datetime DEFAULT NULL,
-  `Usleft` int(11) DEFAULT NULL,
-  `Usremark` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -220,8 +136,19 @@ CREATE TABLE IF NOT EXISTS `victim` (
   `Vno` int(11) NOT NULL,
   `ID` varchar(18) DEFAULT NULL,
   `Vstatus` varchar(10) DEFAULT NULL,
-  `Vfamily` varchar(40) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `Vfamily` varchar(40) DEFAULT NULL,
+  `DVtime` datetime DEFAULT NULL,
+  `DVplace` varchar(40) DEFAULT NULL,
+  `Corpse` varchar(60) DEFAULT NULL,
+  `Injury` varchar(10) DEFAULT NULL,
+  `Ivplace` varchar(30) DEFAULT NULL,
+  `MVTime` datetime DEFAULT NULL,
+  `MVplace` varchar(40) DEFAULT NULL,
+  `remark` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+-- --------------------------------------------------------
 
 --
 -- 转存表中的数据 `victim`
@@ -246,7 +173,7 @@ CREATE TABLE IF NOT EXISTS `volunteer` (
   `Voplace` varchar(60) DEFAULT NULL,
   `Shno` int(11) DEFAULT NULL,
   `Vofamily` varchar(40) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -257,7 +184,7 @@ CREATE TABLE IF NOT EXISTS `volunteer` (
 CREATE TABLE IF NOT EXISTS `vo_t` (
   `Vono` int(11) DEFAULT NULL,
   `Tno` varchar(40) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Indexes for dumped tables
@@ -280,24 +207,6 @@ ALTER TABLE `area`
 --
 ALTER TABLE `citizen`
   ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `dead`
---
-ALTER TABLE `dead`
-  ADD PRIMARY KEY (`Vno`);
-
---
--- Indexes for table `injured`
---
-ALTER TABLE `injured`
-  ADD PRIMARY KEY (`Vno`);
-
---
--- Indexes for table `missing`
---
-ALTER TABLE `missing`
-  ADD PRIMARY KEY (`Vno`);
 
 --
 -- Indexes for table `shelter`
