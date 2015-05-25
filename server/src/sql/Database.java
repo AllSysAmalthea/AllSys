@@ -23,8 +23,13 @@ public class Database {
 	public loginack loginHandler(login m) {
 		loginack res = new loginack(2,m.username);
 		try {
-			ResultSet rs = stmt.executeQuery("");
-			res.status = 1;
+			ResultSet rs = stmt.executeQuery(
+					"select Pass "
+					+ "from User "
+					+ "which ID='" + m.username + "'");
+			String password = rs.getString("Pass");
+			if (m.password.equals(password)) res.status = 1;
+			else res.status = 0;
 		} catch (SQLException e) {
 			// TODO 自动生成的 catch 块
 			e.printStackTrace();
@@ -35,14 +40,13 @@ public class Database {
 	public registerack registerHandler(register m) {
 		registerack res;
 		try {
-			ResultSet rs = stmt.executeQuery("insert into User values(" +
-						m.username + "," +
-						m.tel + "," +
-						m.id + "," +
-						m.password + "," +
-						m.blood + "," +
-						m.addr
-						+ ")");
+			ResultSet rs = stmt.executeQuery(
+					"insert into User(NAME,ID,Pass,BLOODTYPE,HOME) values(" +
+					"'" + m.username + "'," +
+					"'" + m.id + "'," +
+					"'" + m.password + "'," +
+					"'" + m.blood + "'," +
+					"'" + m.addr + "')");
 			res = new registerack(4,1);
 		} catch (SQLException e) {
 			// TODO 自动生成的 catch 块
