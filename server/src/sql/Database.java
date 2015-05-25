@@ -35,7 +35,14 @@ public class Database {
 	public registerack registerHandler(register m) {
 		registerack res;
 		try {
-			ResultSet rs = stmt.executeQuery("");
+			ResultSet rs = stmt.executeQuery("insert into User values(" +
+						m.username + "," +
+						m.tel + "," +
+						m.id + "," +
+						m.password + "," +
+						m.blood + "," +
+						m.addr
+						+ ")");
 			res = new registerack(4,1);
 		} catch (SQLException e) {
 			// TODO 自动生成的 catch 块
