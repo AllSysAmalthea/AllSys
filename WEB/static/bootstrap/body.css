@@ -47,3 +47,11 @@ ul{
 .row-fluid .span11{
 	width:96%;
 }
+.self-btn{
+    width:40px;
+    padding:8px 8px 8px 8px;
+    border-radius:4px;
+    margin-left:20px;
+    margin-right:20px;
+    background-color:#dcdcdc;
+}

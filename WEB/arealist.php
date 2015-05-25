@@ -61,7 +61,7 @@
                     <div class="leftpic"><img src='./static/image/othello.jpg'/></div>
                     <div class="rightcontent">
                     <p class="detail">You can submit your program anytime.</p>
-                    <a href="AI2014.php" class="detail">Enter Game<img class="size" src='./static/image/enter.png' /></a>
+                    <a href="area.php" class="detail">Enter Game<img class="size" src='./static/image/enter.png' /></a>
                     </div>
 				</div>
 			</li>
@@ -71,7 +71,7 @@
                     <div class="leftpic"><img src='./static/image/othello.jpg'/></div>
                     <div class="rightcontent">
                     <p class="detail">You can submit your program anytime.</p>
-                    <a href="AI2014.php" class="detail">Enter Game<img class="size" src='./static/image/enter.png' /></a>
+                    <a href="area.php" class="detail">Enter Game<img class="size" src='./static/image/enter.png' /></a>
                     </div>
 				</div>
 			</li>

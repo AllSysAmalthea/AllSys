@@ -13,7 +13,7 @@
 	function checkuser(){
 		var _user = $("#user").val();
 		if (_user == ""){
-			$("#userinfo").css({'color':'red'}).html('Please input username');
+			$("#userinfo").css({'color':'red'}).html('Please input ID');
 		}else{
 			$("#userinfo").css({'color':'red'}).html('');
 		}
@@ -26,10 +26,10 @@
 			$("#passinfo").css({'color':'red'}).html('');
 		}
 	}
-	function checkcode(){
-		var _code = $("#code").val();
+	function checkName(){
+		var _code = $("#name").val();
 		if (_code == ""){
-			$("#codeinfo").css({'color':'red'}).html('Please input invitation code');
+			$("#codeinfo").css({'color':'red'}).html('Please input your name');
 		}else{
 			$("#codeinfo").css({'color':'red'}).html('');
 		}
@@ -46,92 +46,45 @@
 		}
 	}
 </script> 
-	<?php
-		require("dbconnect.php");
-		function ck_reg($_username,$_pass,$_pass2,$_email)
-		{
-			$_ans="";
-				if ($_username==""){ $_ans="Please input your username!"; return $_ans;}
-				if ($_pass=="")    { $_ans="Please input your password!"; return $_ans; }
-				if ($_pass!=$_pass2) {$_ans="The two passwords do not match!"; return $_ans;}
-				if ($_email=="")   { $_ans="Please input your email address!"; return $_ans; }
-				//if ($_sex=="")     { alert("Please choose your sex!"); return;}
-		}
-		if (isset($_POST['submit'])){
-			$username = $_POST["user"];
-			$username = mysql_real_escape_string($username);
-			$password = $_POST["pass"];
-			$password = mysql_real_escape_string($password);
-			$password2 = $_POST["pass2"];
-			$password2 = mysql_real_escape_string($password2);
-			$email = $_POST["email"];
-			$email = mysql_real_escape_string($email);
-			$code = $_POST["code"];
-			$code = mysql_real_escape_string($code);
-			//账号，邀请码匹配
-			if ($code != $username) {echo "<script>alert('username and invitation code do not match!');location.href='register.php';</script>"; return;}
-			//
-			//invitation code
-			$code_ans = 0;
-			/*
-			$codefile = @file('/usr/local/apache/htdocs/code.txt');
-			foreach($codefile as $line => $content){
-				$content = substr($content , 0 , 9);
-				if ($code == $content){
-					$code_ans = true;
-					break;
-				} 
-			}
-			*/
-			$code_sql = mysql_query("select * from invitationcode where code = '$code'") or die("Query failed:" .mysql_error());
-			$code_sql_row = mysql_fetch_array($code_sql);
-			if ($code_sql_row[1] == 0 && $code_sql_row[0] == $code){
-				$code_ans = 2;
-			}else if ($code_sql_row[1] > 0) $code_ans = 1;
-			if($code_ans == 0){
-				echo "<script>alert('Invitation code error!');location.href='register.php';</script>";
-				return;  
-			}
-			if($code_ans == 1){
-				echo "<script>alert('The invitation code is already in use!');location.href='register.php';</script>";
-				return;  
-			}
-			//
-			$_ans=ck_reg($username,$password,$password2,$email);
-			if ($_ans == ""){
-					require("dbconnect.php");
-			
-					$result=mysql_query("SELECT CHECK_USERNAME('$username')");
-					$ans=mysql_fetch_array($result);
-					
-					if ($ans[0]=='N'){
-						$result=mysql_query("call pSignup('$username','$password','$email');")  or die("Query failed:" .mysql_error());
-						//成功后session保存、、
-						//$result=mysql_query("insert into taccount(username,pass) value ('$username','$password')");
-						if ($result){
-							//change invitation code valid
-							$chg_code_valid = mysql_query("update invitationcode set valid='1' where code = '$code'") or die("Query failed:" .mysql_error());
-							//
-							$rs = mysql_query("select * from taccount where username = '$username'");
-							$row = mysql_fetch_array($rs);
-							$count=mysql_query("select count(*) from tcompetition");
-							for ($i = 1; $i<=$count; $i++){
-								$path = "/usr/local/apache/htdocs/upload/".$i."/".$row[0];         //新建AI文件夹，$i为game的id，$ROW为userid
-								if (!file_exists($path)){                                              //create
-									mkdir($path,0777);
-								}
-							}
-							session_start();
-							$_SESSION['user']=$username;
-							echo "<script>location.href='index.php';</script>";
-						}else echo "<script>alert('Failed!');</script>";
-					}else echo "<script>alert('Username already exist!');</script>";
-					mysql_close();
-			}else {
-						echo "<script>alert('".$_ans."');</script>";
-					}
-		}
-	?>
+<?php
+function ck_reg($userid,$pass1,$pass2,$name){
+    return "";
+}
+if (isset($_POST['submit'])){
+	$userid = $_POST["user"];
+	$userid = mysql_real_escape_string($userid);
+	$password = $_POST["pass"];
+	$password = mysql_real_escape_string($password);
+	$password2 = $_POST["pass2"];
+	$password2 = mysql_real_escape_string($password2);
+	$name = $_POST["name"];
+	$name = mysql_real_escape_string($name);
+	$sex = $_POST["sex"];
+	$sex = mysql_real_escape_string($sex);
+    // race and other info
+	
+    $_ans=ck_reg($userid,$password,$password2,$name);
+	if ($_ans == ""){
+        require("dbconnect.php");
+		$repeat = mysql_query("SELECT count(*) from citizen where ID = '$userid'");
+        $repeat = mysql_fetch_array($repeat);
+        //echo "<script>alert('$repeat[0]');</script>";
+
+		if ($repeat[0] == '0'){
+			$result=mysql_query("insert into citizen(ID,Name,Pass,Sex,Race,Home,Bloodtype,Ano,Level) value('$userid','$name','$password','$sex',NULL,NULL,0,0,0);")  or die("Query failed:" .mysql_error());
+			if ($result){
+				session_start();
+				$_SESSION['user']=$userid;
+                $_SESSION['name']=$name;
+				echo "<script>location.href='index.php';</script>";
+			}else echo "<script>alert('Failed!');</script>";
+		}else echo "<script>alert('UserID already exist!');</script>";
+		mysql_close();
+	}else {
+		echo "<script>alert('".$_ans."');</script>";
+    }
+}
+?>
 </head>
 	
 <body>
@@ -143,8 +96,8 @@
 			<thead><h2 class="form-signin-heading">Create new User</h2></thead>
 			<tbody>
 				<tr>
-					<td>Username</td>
-					<td><input type="text" class="input-block-level" placeholder="Username" id="user" name="user" onblur="checkuser()"></td>
+					<td>ID*</td>
+					<td><input type="text" class="input-block-level" placeholder="ID" id="user" name="user" onblur="checkuser()"></td>
 					<td class="text-left" id="userinfo" name="userinfo"></td>
 				</tr>
 				<tr>
@@ -158,24 +111,32 @@
 					<td class="text-left" id="pass2info"></td>
 				</tr>	
 				<tr>
-					<td>Invitation</td>
-					<td><input type="text" class="input-block-level" placeholder="Invitation code" id="code" name="code" onblur="checkcode()"></td>
+					<td>Name</td>
+					<td><input type="text" class="input-block-level" placeholder="Your Name" id="name" name="name" onblur="checkName()"></td>
 					<td class="text-left" id="codeinfo"></td>
 				</tr>			
 				<tr>
-					<td>Email</td>
-					<td><input type="text" class="input-block-level" placeholder="Email address" id="email" name="email"></td>
+					<td>Sex</td>
+					<td><input type="text" class="input-block-level" placeholder="Sex 0-man,1-woman" id="sex" name="sex"></td>
 				</tr>
 				
 				<tr>
-					<td>School</td>
-					<td><input type="text" class="input-block-level" placeholder="Your School" id="school"></td>
+					<td>Race</td>
+					<td><input type="text" class="input-block-level" placeholder="Your race" id="race"></td>
 				</tr>
 				<tr>
-					<td>Grade</td>
-					<td><input type="text" class="input-block-level" placeholder="Grade" id="grade"></td>
+					<td>Home</td>
+					<td><input type="text" class="input-block-level" placeholder="home address" id="home"></td>
 				</tr>
-				
+				<tr>
+					<td>BloodType</td>
+					<td><input type="text" class="input-block-level" placeholder="A/B/AB/O" id="bloodtype"></td>
+				</tr>
+                <tr>
+					<td>Ano</td>
+					<td><input type="text" class="input-block-level" placeholder="belong to which area" id="Ano"></td>
+				</tr>
+
 				<tr>
 					<td></td>
 					<td class="text-center"><input class="btn btn-large btn-primary" type="submit" id="submit" name ="submit" style="width:50%" value ="Register" /></td>
