@@ -22,11 +22,11 @@ public class Server {
 		db = new Database();
 		try {
 			servsock = new ServerSocket(serverPort);
+			System.out.println("Server listening..");
 			while (true) {
 				Socket sock=servsock.accept();
-				threadPool.execute(new HandleAClient(sock));
+				threadPool.execute(new HandleAClient(sock,db));
 			}
-			
 		} catch (IOException e) {
 			// TODO 自动生成的 catch 块
 			e.printStackTrace();
@@ -39,8 +39,10 @@ class HandleAClient implements Runnable {
 	private Database db;
 	//private static ArrayList<String> users = new ArrayList<String>();
 	
-	public HandleAClient(Socket socket) {
+	public HandleAClient(Socket socket,Database db) {
+		System.out.println("Handling a new client!");
 		this.socket = socket;
+		this.db = db;
 	}
 	@Override
 	public void run() {

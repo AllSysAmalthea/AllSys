@@ -13,12 +13,26 @@ public class Database {
 	Statement stmt;
 	public Database () {
 		try {
-			conn = DriverManager.getConnection("", "", "");
+			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+		} catch (InstantiationException e1) {
+			// TODO 自动生成的 catch 块
+			e1.printStackTrace();
+		} catch (IllegalAccessException e1) {
+			// TODO 自动生成的 catch 块
+			e1.printStackTrace();
+		} catch (ClassNotFoundException e1) {
+			// TODO 自动生成的 catch 块
+			e1.printStackTrace();
+		}
+		try {
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/allsys","allsys","B2w7KVuDDYvb694J");
 			stmt = conn.createStatement();
 		} catch (SQLException e) {
 			// TODO 自动生成的 catch 块
 			e.printStackTrace();
 		}
+		System.out.println("Database connected.");
 	}
 	public loginack loginHandler(login m) {
 		loginack res = new loginack(2,m.username);
