@@ -14,8 +14,8 @@ import sql.Database;
 
 
 public class Server {
-	public static int serverPort = 31241; 
-	private static Database db;
+	public int serverPort = 8000; 
+	private Database db;
 	ServerSocket servsock;
 	Server() {
 		ExecutorService threadPool = Executors.newCachedThreadPool();
@@ -25,6 +25,7 @@ public class Server {
 			System.out.println("Server listening..");
 			while (true) {
 				Socket sock=servsock.accept();
+				System.out.println("Accept!");
 				threadPool.execute(new HandleAClient(sock,db));
 			}
 		} catch (IOException e) {
