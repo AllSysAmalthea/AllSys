@@ -12,6 +12,34 @@
 	<title><?php echo $view_title ?></title>
 	<link href="./static/bootstrap/bootstrap.css" rel="stylesheet">
 	<link href="./static/bootstrap/body.css" rel="stylesheet">
+    <link rel="stylesheet" href="./static/bootstrap/reset.css" type="text/css" media="all">
+	<link rel="stylesheet" href="./static/bootstrap/grid.css" type="text/css" media="all">
+	<link rel="stylesheet" href="./static/bootstrap/style.css" type="text/css" media="all">
+    <script type="text/javascript" src="./static/js/jquery-1.4.2.min.js" ></script>
+	<script type="text/javascript" src="./static/js/jquery.anythingslider.js"></script>
+    <script type="text/javascript" src="./static/js/jquery.easing.1.2.js"></script>
+    <script type="text/javascript">
+        
+        function formatText(index, panel) {
+            return index + "";
+            }
+        
+                $(function () {
+                
+                    $('.anythingSlider').anythingSlider({
+                        easing: "easeInOutExpo",        // Anything other than "linear" or "swing" requires the easing plugin
+                        autoPlay: true,                 // This turns off the entire FUNCTIONALY, not just if it starts running or not.
+                        delay: 3000,                    // How long between slide transitions in AutoPlay mode
+                        startStopped: false,            // If autoPlay is on, this can force it to start stopped
+                        animationTime: 600,             // How long the slide transition takes
+                        hashTags: true,                 // Should links change the hashtag in the URL?
+                        buildNavigation: true,          // If true, builds and list of anchor links to link to each slide
+                        pauseOnHover: true,             // If true, and autoPlay is enabled, the show will pause on hover
+                       // startText: "Play",             // Start text
+                   	 //   stopText: "Stop"               // Stop text
+                    });
+                });
+    </script>
 	<style>
 		.p_title{
 			font-size:32px;
@@ -30,6 +58,7 @@
 		}
 		.thumbnail{border-radius:0px;}
 	</style>
+    
 </head>
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top">
@@ -40,23 +69,112 @@
 		<div id="header">
 			<img id="header-title"class="pull-right" src="./static/image/title.png">
 		</div>
-		
-			
-			<ul class="thumbnails">
-				<li class="span13">
-					<div class="thumbnail" style="background-color:white; padding:0px 50px 0px 50px">
-						<br>
-						<p class="p_title">Introduction</p>
-						<p>&nbsp &nbsp &nbsp &nbsp众所周知，人工智能是计算机科学中一个重要的研究领域，也是普通大众最关注的计算机科学研究方向之一。但是，人工智能的实现过于复杂，这让很多想学习或了解人工智能的人们望而却步。并且，他们即使做出了一些人工智能的实现，也会因为没有可以与他人比较的机会而使自己实现AI的能力进步得很慢。为了改善这一状况，我们决定搭建一个基于 WEB 3.0 的AI开发评测平台，为对AI感兴趣的人提供一个使用简便的AI开发包，并为提供一个方便的网上评测平台，便于他们切磋技艺，提升能力。</p>
-						<p>&nbsp &nbsp &nbsp &nbsp本平台除了为AI设计提供了开发与评测支持外，还允许一些有兴趣提供自己的AI开发包的人达成他们的愿望。我们将尽力提供一个用户友好的平台，让他们可以更加方便、舒适的进行AI的开发。同时，我们将会提供一个尽量开放的平台，让每一个用户从平台的使用者变成平台的建设者。当然，我们也要提供一个稳定而又安全的平台。我们使用比较稳定成熟的技术来做网页平台的底层支撑，并采用sandbox技术使评测的过程更安全，从而让整个平台健康发展。</p>
-						
-					</div>
-				</li>
-			</ul>
-		
-		
+		 <section id="main-banner">
+            <div class="intro">
+              <div class="inner"> <strong>加入我们</strong>　　　　 一起渡过难关</span> </div>
+            </div>
+            <div class="anythingSlider">
+              <div class="wrapper">
+                <ul>
+                  <li><img src="./static/images/slide1.jpg" alt=""></li>
+                  <li><img src="./static/images/slide2.jpg" alt=""></li>
+                  <li><img src="./static/images/slide3.jpg" alt=""></li>
+                  <li><img src="./static/images/slide4.jpg" alt=""></li>
+                  <li><img src="./static/images/slide5.jpg" alt=""></li>
+                </ul>
+              </div>
+            </div>
+          </section>
+		 
+    	<div class="wrapper">
+    <!-- content -->
+    <section id="content">
+    	<div class="container_12">
+        <div class="wrapper">
+        	<aside class="grid_4">
+        		<div class="box">
+            	<h2>需要的物资情况:</h2>
+              <ul class="list1">
+              	<li>衣物			 急缺</a></li>
+                <li>食物			 急缺</a></li>
+                <li>帐篷			 暂够</a></li>
+                <li>水 			 急缺</a></li>
+                <li>通讯器材		 急缺</a></li>
+                <li>被子 		 暂够</a></li>
+                <li>取暖材料      暂够</a></li>
+                <li>A型血		 急缺</a></li>
+                <li>药物			 急缺</a></li>
+                <li>医疗器械		 急缺</a></li>
+              </ul>
+              <div class="extra-links">
+              	<a href="#">具体情况</a> &nbsp;| &nbsp;<a href="#">我要捐赠</a>
+                <!-的链接直接连到donate的页面吧！->
+              </div>
+            </div>
+            <div class="box">
+            	<h2>反馈建议</h2>
+              <p>如果您有任何建议或意见<br />
+              欢迎提出</p>
+              <form action="" id="newsletter-form">
+                <fieldset><input type="text"><br><input type="submit" value="ok"></fieldset>
+              </form>
+            </div>
+          </aside>	
+           <div class="grid_8">
+            <div class="indent">
+              <article>
+                <div class="inside">
+                	<h2>感动你我</h2>
+                  <div class="wrapper">
+                    <img src="./static/images/voluteer.jpg" alt="" class="img-indent">
+                    <h4>她是xxx..介绍 ...<br><br> </h4>
+                    <p>她做了...啊，感人啊！</p>
+         
+                  </div>
+                </div>
+              </article>
+              <article class="last">
+              	<div class="wrapper">
+                	<div class="grid_4 colborder alpha">
+                  	<div class="inside">
+                  	  <h2>最新新闻</h2>
+                      <ul class="news">
+                      	<li>
+                        	<p class="date"><strong>1</strong>Jun</p>
+                         WTF！要交编译原理！<br><br><br><br>
+                        </li>
+                        <li>
+                        	<p class="date"><strong>1</strong>May</p>
+                         你好五月病！<br><br><br><br>
+                        </li>
+                        <li>
+                        	<p class="date"><strong>1</strong>Mar</p>
+                          开学咧开学咧！<br><br><br><br>
+                        </li>
+                      </ul>
+                      <a href="#" class="button">Read More</a>
+                      <!--这里的read more到底留不留呢？-->
+                  	</div>
+                  </div>
+                	<div class="grid_4 omega">
+                  	<div class="inside">
+                  	  <h2>关于我们</h2>
+                      <p><img src="./static/images/we.jpg" alt=""></p>
+                      <p class="p3">这就是我们的照片哦！漂亮吧！
+                      <br>我们就是美丽与智慧的化身啊，小学生！<br><br><br><br><br><br></p>
+                      <a href="#" class="button">Read More</a>
+                      <!--这里直接链接到about Amalthea？-->
+                  	</div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>	
 	</div>
-
     <div id="push"></div>
 	<div id="footer">
 		<?php require_once("footer.php");?>
