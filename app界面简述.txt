@@ -3,7 +3,7 @@ app界面
 界面整体描述：
 	打开app --> 普通界面
 	普通界面 --> 志愿者界面（已注册登陆）or 登陆界面（未登录）
-	普通界面 --> 庇护所信息界面、查询人员界面、地图显示界面
+	普通界面 --> 查询人员界面、地图显示界面
 	志愿者界面 --> 任务界面
 	
 	
@@ -33,11 +33,6 @@ app界面
 	button:   Volunteer   (点击进入志愿者界面)
 
 4、志愿者界面
-	ImageButton: News  （点击进入新闻简报界面）    
-	button:   Location   （点击定位）
-	button:   Safehouse   （点击查看庇护所信息）
-	button:   Survivor   （点击查看幸存者信息）
-	ImageButton: task   (点击查看任务)
 	button: exit
 	button: user
 	

@@ -17,24 +17,23 @@ import android.widget.ImageView;
 public class VoluteerActivity extends Activity {
 
 	
-	ImageButton Location;
-	ImageButton Safehouse;
-	ImageButton Survivor;
+	Button Busy;
+	Button Free;
+	Button Done;
 	ImageButton Exit;
 	ImageButton User;
-	Button Task;
+	
 	
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);  
         setContentView(R.layout.activity_voluteer); 
         
-        Location = (ImageButton)findViewById(R.id.Location);
-        Safehouse = (ImageButton)findViewById(R.id.Safehouse);
-        Survivor = (ImageButton)findViewById(R.id.Survivor);
+        Busy = (Button)findViewById(R.id.Busy);
+        Free = (Button)findViewById(R.id.Free);
+        Done = (Button)findViewById(R.id.Done);
         Exit = (ImageButton)findViewById(R.id.exit);
         User = (ImageButton)findViewById(R.id.user);
-        Task  = (Button)findViewById(R.id.user);
         
         
       
