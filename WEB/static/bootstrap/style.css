@@ -4,7 +4,6 @@ mark, rp, rt, ruby, summary, time{ display: inline }
 
 /* Global properties ======================================================== */
 body { 
-	background:url(../images/main-bg.gif) no-repeat 50% 0 #192035; 
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:100%; 
 	line-height:1.0625em;
