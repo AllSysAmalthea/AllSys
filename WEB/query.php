@@ -1,95 +1,140 @@
 <!doctype html>
-<?php
-	$flag =@$_GET['flag'];
-	$flag = mysql_real_escape_string($flag);
-	if ($flag == 1){
-		$username= @$_POST['user'];
-		$username = mysql_real_escape_string($username);
-		$password= @$_POST['pass'];
-		$password = mysql_real_escape_string($password);
-		require("dbconnect.php");
-	
-		$result=mysql_query("SELECT chk_acc_info('$username','$password')");
-		$ans=mysql_fetch_array($result);
-		if ($ans[0] != 0)
-		{
-			session_start(); /////////////////need repair
-			$_SESSION["user"] = $username;
-			echo "<script>location.href='index.php';</script>";
-		} else echo "<script>alert('Username or Password is wrong!');</script>";
-	}
-?>
 <html5>
 <head>
-	<meta name="renderer" content="webkit">
-	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Donate</title>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>查询</title>
 <link href="./static/bootstrap/bootstrap.css" rel="stylesheet">
 <link href="./static/bootstrap/body.css" rel="stylesheet">
 <link href="./static/bootstrap/login.css" rel="stylesheet">	
 <script type="text/javascript" src="./static/js/jquery.js"></script>
-<script>
-	function checkuser(){
-		var _user = $("#user").val();
-		if (_user == ""){
-			$("#userinfo").css({'color':'red'}).html('Please input username');
-			//$("#userinfo").addClass("alert alert-warning").html('Please input username');
-		}else{
-			$("#userinfo").css({'color':'red'}).html('');
-		}
-	}
-	function checkpass(){
-		var _pass = $("#pass").val();
-		if (_pass == ""){
-			//$("#passinfo").addClass("alert alert-warning").html('Please input password');
-			$("#passinfo").css({'color':'red'}).html('Please input password');
-		}else{
-			$("#passinfo").css({'color':'red'}).html('');
-		}
-	}
-</script>
+<style>
+table{
+    width:100%;
+}
+.content{
+    width:69%;
+}
+</style>
 </head>
-
+<?php
+    //init flag
+    $flag_l2 = 9777;
+?>
+<?php
+if (isset($_POST['query1'])){
+    $qID =@$_POST['qID'];
+	$qID = mysql_real_escape_string($qID);
+    if($qID != ""){
+        require_once("dbconnect.php");
+        $rt = mysql_query("SELECT * from citizen where ID = '$qID';")or die("Query failed:" .mysql_error());
+        $result = mysql_fetch_array($rt);
+        //echo "<script>alert('$result[1]');</script>";
+        $ans1="";
+        $ans1 = "姓名:".$result[1]."<br>性别：".$result[3]."<br>民族：".$result[4]."<br>家庭住址：".$result[5]."<br>血型：".$result[6];
+        $ans1 .= "<br>所在灾区：".$result['Ano'];
+    
+        $rt = mysql_query("SELECT * from victim where ID = '$qID';")or die("Query failed:" .mysql_error());
+        $result = mysql_fetch_array($rt);
+        if ($result == NULL){
+            $ans1 ="无此人信息！";
+        }else{
+            $ans1 .= "<br>当前状态：".$result[2]."<br>家庭信息：".$result[3]."<br>受伤/死亡时间：".$result[4]."<br>受伤/死亡地点：".$result[5];
+            $ans1 .= "<br>受伤程度：".$result['Injury']."<br>所在医院：".$result['Vhospital'];
+        }
+    }else $ans1="";
+    
+}else if(isset($_POST['query2'])){
+    $qShelter =@$_POST['qShelter'];
+	$qShelter = mysql_real_escape_string($qShelter);
+    if($qShelter != ""){
+        require_once("dbconnect.php");
+        $rt = mysql_query("SELECT * from shelter where SHname = '$qShelter';")or die("Query failed:" .mysql_error());
+        $result = mysql_fetch_array($rt);
+        //echo "<script>alert('$result[2]');</script>";
+        $ans2 = "庇护所名称:".$result['SHname']."<br>地址：".$result['SHaddress']."<br>状态：".$result['SHstate'];
+        $ans2 .= "<br>当前人口：".$result['Shnow']."<br>人口上限：".$result['Shlimit'];
+        $ans2 .= "<br>其他信息：".$result['Shremark']."<br>物资信息：";
+        $shno = $result[0];
+        $rt = mysql_query("SELECT * from supplies where Shno = '$shno';")or die("Query failed:" .mysql_error());
+        while($row = mysql_fetch_array($rt)){
+            $ans2 .="<br>~物资名称：".$row['Suname']."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数量：".$row['Suamount'];
+        }
+    }else $ans2="";
+    
+}else{
+$qID = @$_GET['id'];
+$shno = @$_GET['sid'];
+if ($qID !=""){
+	$qID = mysql_real_escape_string($qID);
+    require_once("dbconnect.php");
+    $rt = mysql_query("SELECT * from citizen where ID = '$qID';")or die("Query failed:" .mysql_error());
+    $result = mysql_fetch_array($rt);
+    $ans1="";
+    $ans1 = "姓名:".$result[1]."<br>性别：".$result[3]."<br>民族：".$result[4]."<br>家庭住址：".$result[5]."<br>血型：".$result[6];
+    $ans1 .= "<br>所在灾区：".$result['Ano'];
+    
+    $rt = mysql_query("SELECT * from victim where ID = '$qID';")or die("Query failed:" .mysql_error());
+    $result = mysql_fetch_array($rt);
+    if ($result == NULL){
+        $ans1 ="无此人信息！";
+    }else{
+        $ans1 .= "<br>当前状态：".$result[2]."<br>家庭信息：".$result[3]."<br>受伤/死亡时间：".$result[4]."<br>受伤/死亡地点：".$result[5];
+        $ans1 .= "<br>受伤程度：".$result['Injury']."<br>所在医院：".$result['Vhospital'];
+    }
+}
+if ($shno !=""){
+	$shno = mysql_real_escape_string($shno);
+    require_once("dbconnect.php");
+    $rt = mysql_query("SELECT * from shelter where Shno = '$shno';")or die("Query failed:" .mysql_error());
+    $result = mysql_fetch_array($rt);
+        //echo "<script>alert('$result[2]');</script>";
+    $ans2 = "庇护所名称:".$result['SHname']."<br>地址：".$result['SHaddress']."<br>状态：".$result['SHstate'];
+    $ans2 .= "<br>当前人口：".$result['Shnow']."<br>人口上限：".$result['Shlimit'];
+    $ans2 .= "<br>其他信息：".$result['Shremark']."<br>物资信息：";
+    $shno = $result[0];
+    $rt = mysql_query("SELECT * from supplies where Shno = '$shno';")or die("Query failed:" .mysql_error());
+    while($row = mysql_fetch_array($rt)){
+        $ans2 .="<br>~物资名称：".$row['Suname']."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数量：".$row['Suamount'];
+    }
+}
+}
+?>
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<?php require_once("header.php");?>
 	</div>
 	<div id="fbody"><ul class="thumbnails">
 		<div class="thumbnail span8 formdiv">
-		<form id="form" class="form-signin" method="post" action="login.php?flag=1" enctype="multipart/form-data"><table> 
+		<form id="form" class="form-signin" method="post" action="" enctype="multipart/form-data"><table> 
 			<thead><h2 class="form-signin-heading">灾区信息查询</h2></thead>
 			<tbody>
 				<tr>
 					<td>查询人口状态</td>
-					<td><input type="text" class="input-block-level" placeholder="Username" id="user" name="user" onblur="checkuser()"></td>
-                    <td class="text-center"><input type="submit" class="btn btn-big btn-primary" value="查询"></td>
-                    <td class="text-left" id="userinfo"></td>
+					<td class="content"><input type="text" class="input-block-level" placeholder="ID" id="qID" name="qID"></td>
+                    <td class="text-center"><input type="submit" class="btn btn-big btn-primary" value="查询" id="query1" name="query1"></td>
+                    
 				</tr>
+                <tr>
+                    <td></td><td class="text-left"><?php echo @$ans1;?></td><td></td>
+                </tr>
 				<tr>
 					<td>查询庇护所</td>
-					<td><input type="text" class="input-block-level" placeholder="Username" id="user" name="user" onblur="checkuser()"></td>
-                    <td class="text-center"><input type="submit" class="btn btn-big btn-primary" value="查询"></td>
-					<td class="text-left" id="userinfo"></td>
+					<td><input type="text" class="input-block-level" placeholder="庇护所名称" id="qShelter" name="qShelter"></td>
+                    <td class="text-center"><input type="submit" class="btn btn-big btn-primary" value="查询" id="query2" name="query2"></td>
 				</tr>
                 <tr>
-					<td>查询</td>
-					<td><input type="text" class="input-block-level" placeholder="Username" id="user" name="user" onblur="checkuser()"></td>
-                    <td class="text-center"><input type="submit" class="btn btn-big btn-primary" value="查询"></td>
-					<td class="text-left" id="userinfo"></td>
+                    <td></td><td class="text-left"><?php echo @$ans2;?></td><td></td>
+                </tr>
+                <tr>
+					<td>查询志愿者</td>
+					<td><input type="text" class="input-block-level" placeholder="ID" id="qVolunteer" name="qVolunteer"></td>
+                    <td class="text-center"><input type="submit" class="btn btn-big btn-primary" value="查询" id="query3" name="query3"></td>
 				</tr>
                 <tr>
-					<td>捐赠单号</td>
-					<td><input type="text" class="input-block-level" placeholder="Username" id="user" name="user" onblur="checkuser()"></td>
-                    <td class="text-center"><input type="submit" class="btn btn-big btn-primary" value="查询"></td>
-					<td class="text-left" id="userinfo"></td>
-				</tr>
-                <tr>
-					<td>联系方式</td>
-					<td><input type="text" class="input-block-level" placeholder="Username" id="user" name="user" onblur="checkuser()"></td>
-                    <td class="text-center"><input type="submit" class="btn btn-big btn-primary" value="查询"></td>
-					<td class="text-left" id="userinfo"></td>
-				</tr>
+			<td></td><td class="text-left"><?php echo @$ans3;?></td><td></td>
+		</tr>
 			
 			</tbody>
         </table></form>
@@ -102,7 +147,50 @@
     </ul></div>
 	
 	
-		
+	<?php
+
+function dealwith($array){
+    $i = 1; 
+    $j = $array[0];
+    $bs = 0;
+    $x = $array[($i + $j)/2];
+    
+    $rt = "";
+while($i < $j){
+    while($array[$i] < $x && $i < $array[0]){
+        $bs--;
+        $i++;
+    }
+
+    while($array[$j] > $x && $j > 1){
+        $bs = $bs % 12;
+         $j--;
+    }
+
+    if ($i == $j){
+        $rt .= "write a row<br>";
+    }
+    
+}
+}
+
+
+        $check_l2 = $flag_l2;
+        if ($check_l2 == 5){
+            require_once("dbconnect.php");
+            $rt = mysql_query("SELECT * from admin where Shno = '$shno';")or die("Query failed:" .mysql_error());
+            $result = mysql_fetch_array($rt);
+
+            //content 
+            $content = "";
+            $cc = "";
+            for($i = 1; $i<$result[1]; $i++){
+                $content .= "<input>".$cc."</input>";
+                dealwith($result);
+            }
+        }
+
+    ?>
 	
 	<div id="push"></div>
 	<div id="footer">

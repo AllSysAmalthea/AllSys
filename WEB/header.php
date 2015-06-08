@@ -6,12 +6,18 @@
 	$_cur2 = "";
 	$_cur3 = "";
 	$_cur4 = "";
+    $_cur5 = "";
+    $_cur6 = "";
+    $_cur7 = "";
 	switch($cur_url){
 		case "/index.php": $_cur1 = "active"; break;
-		case "/games.php": $_cur2 = "active"; break;
-		case "/submissions.php": $_cur3="active"; break;
-		case "/about.php" :  $_cur4 = "active"; break;
-	}
+		case "/area.php": $_cur2 = "active"; break;
+		case "/donate.php": $_cur3="active"; break;
+		case "/query.php" :  $_cur4 = "active"; break;
+        case "/admin.php" : $_cur5 = "active"; break;
+        case "/request.php" : $_cur6 = "active"; break;
+        case "/about.php" : $_cur7 = "active"; break;
+    }
 ?>
 <style>
 	.header{
@@ -46,11 +52,12 @@
 				
 			<ul class="nav">
 				<li class="<?php echo $_cur1;?>"><a href="index.php">Home</a></li>
-				<li class="<?php echo $_cur2;?>"><a href="arealist.php">AreaList</a></li>
+				<li class="<?php echo $_cur2;?>"><a href="area.php">Area</a></li>
 				<li class="<?php echo $_cur3;?>"><a href="donate.php">Donate</a></li>
-                <li class="<?php echo $_cur3;?>"><a href="query.php">Query</a></li>
-                <li class="<?php echo $_cur3;?>"><a href="admin.php">Admin</a></li>
-				<li class="<?php echo $_cur4;?>"><a href="about.php">About Amalthea</a></li>
+                <li class="<?php echo $_cur4;?>"><a href="query.php">Query</a></li>
+                <li class="<?php echo $_cur5;?>"><a href="admin.php">Admin</a></li>
+                <li class="<?php echo $_cur6;?>"><a href="request.php">任务请求</a></li>
+				<li class="<?php echo $_cur7;?>"><a href="about.php">About Amalthea</a></li>
 			</ul>
 		</div>
 	</div>

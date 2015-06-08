@@ -61,6 +61,18 @@ if (isset($_POST['submit'])){
 	$name = mysql_real_escape_string($name);
 	$sex = $_POST["sex"];
 	$sex = mysql_real_escape_string($sex);
+    $home = $_POST["home"];
+	$home = mysql_real_escape_string($home);
+    $bloodtype = $_POST["bloodtype"];
+	$bloodtype = mysql_real_escape_string($bloodtype);
+    $height = $_POST["height"];
+	$height = mysql_real_escape_string($height);
+    $weight = $_POST["weight"];
+	$weight = mysql_real_escape_string($weight);
+    $edu = $_POST["edu"];
+	$edu = mysql_real_escape_string($edu);
+    
+    
     // race and other info
 	
     $_ans=ck_reg($userid,$password,$password2,$name);
@@ -71,8 +83,9 @@ if (isset($_POST['submit'])){
         //echo "<script>alert('$repeat[0]');</script>";
 
 		if ($repeat[0] == '0'){
-			$result=mysql_query("insert into citizen(ID,Name,Pass,Sex,Race,Home,Bloodtype,Ano,Level) value('$userid','$name','$password','$sex',NULL,NULL,0,0,0);")  or die("Query failed:" .mysql_error());
-			if ($result){
+			$result=mysql_query("insert into citizen(ID,Name,Pass,Sex,Race,Home,Bloodtype,Ano,Level) value('$userid','$name','$password','$sex',NULL,NULL,'$bloodtype',0,0);")  or die("Query failed:" .mysql_error());
+			$rs = mysql_query("insert into volunteer(ID,Vostatus,Voheight,Voweight,Voedu) value('$userid',1,'$height','$weight','$edu');")  or die("Query failed:" .mysql_error());		
+            if ($result && $rs){
 				session_start();
 				$_SESSION['user']=$userid;
                 $_SESSION['name']=$name;
@@ -119,24 +132,26 @@ if (isset($_POST['submit'])){
 					<td>Sex</td>
 					<td><input type="text" class="input-block-level" placeholder="Sex 0-man,1-woman" id="sex" name="sex"></td>
 				</tr>
-				
-				<tr>
-					<td>Race</td>
-					<td><input type="text" class="input-block-level" placeholder="Your race" id="race"></td>
-				</tr>
 				<tr>
 					<td>Home</td>
-					<td><input type="text" class="input-block-level" placeholder="home address" id="home"></td>
+					<td><input type="text" class="input-block-level" placeholder="home address" id="home" name="home"></td>
 				</tr>
 				<tr>
 					<td>BloodType</td>
-					<td><input type="text" class="input-block-level" placeholder="A/B/AB/O" id="bloodtype"></td>
+					<td><input type="text" class="input-block-level" placeholder="A/B/AB/O" id="bloodtype" name="bloodtype"></td>
 				</tr>
                 <tr>
-					<td>Ano</td>
-					<td><input type="text" class="input-block-level" placeholder="belong to which area" id="Ano"></td>
+					<td>身高</td>
+					<td><input type="text" class="input-block-level" placeholder="身高 cm" id="height" name="height"></td>
 				</tr>
-
+                <tr>
+					<td>体重</td>
+					<td><input type="text" class="input-block-level" placeholder="体重 kg" id="weight" name="weight"></td>
+				</tr>
+                <tr>
+					<td>教育状况</td>
+					<td><input type="text" class="input-block-level" placeholder="教育状况" id="edu" name="edu"></td>
+				</tr>
 				<tr>
 					<td></td>
 					<td class="text-center"><input class="btn btn-large btn-primary" type="submit" id="submit" name ="submit" style="width:50%" value ="Register" /></td>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 ////////////////////////////// head
-	$view_title= "METIS";
+	$view_title= "Amalthea赈灾管理系统";
 ?>
 
 <html5>
@@ -46,8 +46,7 @@
 			font-weight:bold;
 		}
 		#header{
-			background-image: url(./static/image/bg10.jpg);
-			height:300px;
+			height:40px;
 		}
 		#header-title{
 			padding:80px 30px 0px 0px;
@@ -67,7 +66,6 @@
 	
    	<div id="indexbody">
 		<div id="header">
-			<img id="header-title"class="pull-right" src="./static/image/title.png">
 		</div>
 		 <section id="main-banner">
             <div class="intro">

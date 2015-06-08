@@ -55,3 +55,25 @@ ul{
     margin-right:20px;
     background-color:#dcdcdc;
 }
+.self-btn2{
+    width:40px;
+    padding:8px 8px 8px 8px;
+    border-radius:45px;
+    margin-left:120px;
+    margin-right:20px;
+    background-color:#dcdcdc;
+}
+.self-btn3{
+    width:50px;
+    border-radius:4px;
+    margin-left:20px;
+    margin-right:20px;
+    background-color:#aadadc;
+}
+.self-btn4{
+    width:30px;
+    border-radius:4px;
+    margin-left:20px;
+    margin-right:20px;
+    background-color:#dcdcdc;
+}
