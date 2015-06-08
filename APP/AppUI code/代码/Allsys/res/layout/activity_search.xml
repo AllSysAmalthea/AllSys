@@ -16,7 +16,7 @@
         <TextView
             android:id="@+id/header_text"
             android:layout_width="fill_parent"
-            android:layout_height="68px"
+            android:layout_height="80px"
             android:layout_x="0px"
             android:layout_y="0px"
             android:background="#A4D3EE"
@@ -24,16 +24,8 @@
             android:singleLine="true"
             android:text="AllSysAmalthea"
             android:textColor="#ffffff"
-            android:textSize="20sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
-
-        <ImageButton
-            android:id="@+id/user"
-            android:layout_width="100px"
-            android:layout_height="100px"
-            android:layout_x="260dp"
-            android:layout_y="-10dp"
-            android:background="@drawable/user" />
 
         <ImageButton
             android:id="@+id/exit"
@@ -42,37 +34,24 @@
             android:layout_x="8dp"
             android:layout_y="-4dp"
             android:background="@drawable/pic2" />
+
+        <ImageButton
+            android:id="@+id/user"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_x="492dp"
+            android:layout_y="-11dp"
+            android:background="@drawable/user" />
+
     </AbsoluteLayout>
-
-    <Button
-        android:id="@+id/Search"
-        android:layout_width="120px"
-        android:layout_height="50px"
-        android:layout_alignBaseline="@+id/searchContent"
-        android:layout_alignBottom="@+id/searchContent"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="14dp"
-        android:background="@drawable/shape3"
-        android:text="Search"
-        android:textColor="#ffffff"
-        android:textSize="14sp" />
-
-    <EditText
-        android:id="@+id/searchContent"
-        android:layout_width="300px"
-        android:layout_height="60px"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/linearLayout1"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/searchresult"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_width="400dp"
+        android:layout_height="650dp"
+        android:layout_alignLeft="@+id/searchContent"
+        android:layout_alignRight="@+id/Search"
         android:layout_below="@+id/searchContent"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="48dp"
         android:background="#ffffff"
         android:lineSpacingMultiplier="1.0"
@@ -80,5 +59,32 @@
         android:text="information of task..............\n.......\n........\n........\n........\n.......\n"
         android:textColor="#7f7f7f"
         android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/searchContent"
+        android:layout_width="300px"
+        android:layout_height="80px"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_marginLeft="59dp"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:textSize="26sp" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/Search"
+        android:layout_width="150px"
+        android:layout_height="80px"
+        android:layout_alignBaseline="@+id/searchContent"
+        android:layout_alignBottom="@+id/searchContent"
+        android:layout_marginLeft="37dp"
+        android:layout_toRightOf="@+id/searchContent"
+        android:background="@drawable/shape3"
+        android:text="Search"
+        android:textColor="#ffffff"
+        android:textSize="28sp" />
 
 </RelativeLayout>

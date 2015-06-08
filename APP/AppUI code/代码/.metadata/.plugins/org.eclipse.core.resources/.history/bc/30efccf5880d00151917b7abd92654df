@@ -1,0 +1,128 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/back"
+    android:gravity="top"
+    tools:context=".SearchActivity" >
+
+    <AbsoluteLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/header_text"
+            android:layout_width="fill_parent"
+            android:layout_height="80px"
+            android:layout_x="0px"
+            android:layout_y="0px"
+            android:background="#A4D3EE"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="AllSysAmalthea"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/header_left_btn"
+            android:layout_width="80px"
+            android:layout_height="60px"
+            android:layout_x="10dp"
+            android:layout_y="4dp"
+            android:background="@drawable/pic1" />
+
+        <ImageButton
+            android:id="@+id/Location"
+            android:layout_width="40px"
+            android:layout_height="40px"
+            android:layout_x="532dp"
+            android:layout_y="11dp"
+            android:background="@drawable/loc" />
+
+    </AbsoluteLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="200px"
+        android:layout_height="60px"
+        android:layout_alignTop="@+id/myImageView2"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/myImageView2"
+        android:text="new01"
+        android:textSize="22sp" />
+
+    <ImageView
+        android:id="@+id/myImageView3"
+        android:layout_width="160px"
+        android:layout_height="100px"
+        android:layout_below="@+id/myImageView2"
+        android:layout_marginTop="20dp"
+        android:layout_toLeftOf="@+id/textView1"
+        android:background="@drawable/news02" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="200px"
+        android:layout_height="60px"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignTop="@+id/myImageView3"
+        android:text="new02"
+        android:textSize="22sp" />
+
+    <ImageView
+        android:id="@+id/myImageView2"
+        android:layout_width="160px"
+        android:layout_height="100px"
+        android:layout_alignLeft="@+id/myImageView1"
+        android:layout_below="@+id/myImageView1"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/news02" />
+
+    <ImageView
+        android:id="@+id/myImageView1"
+        android:layout_width="500px"
+        android:layout_height="200px"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/news01" />
+
+    <Button
+        android:id="@+id/Joinus"
+        android:layout_width="180px"
+        android:layout_height="80px"
+        android:layout_alignBaseline="@+id/Search"
+        android:layout_alignBottom="@+id/Search"
+        android:layout_alignRight="@+id/textView2"
+        android:background="@drawable/shape2"
+        android:text="Join us"
+        android:textColor="#ffffff"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/Search"
+        android:layout_width="180px"
+        android:layout_height="80px"
+        android:layout_alignRight="@+id/myImageView3"
+        android:layout_below="@+id/myImageView3"
+        android:layout_marginTop="38dp"
+        android:background="@drawable/shape3"
+        android:text="Search"
+        android:textColor="#ffffff"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="200px"
+        android:layout_height="40px"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_marginTop="18dp"
+        android:text="多云12度"
+        android:textSize="20sp" />
+
+</RelativeLayout>

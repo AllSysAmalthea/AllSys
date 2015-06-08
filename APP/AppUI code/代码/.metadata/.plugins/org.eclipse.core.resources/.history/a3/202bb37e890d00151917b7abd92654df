@@ -1,0 +1,98 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/back"
+    android:gravity="top"
+    tools:context=".VoluteerAvtivity" >
+
+    <AbsoluteLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/header_text"
+            android:layout_width="fill_parent"
+            android:layout_height="80px"
+            android:layout_x="0px"
+            android:layout_y="0px"
+            android:background="#A4D3EE"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="AllSysAmalthea"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/exit"
+            android:layout_width="80px"
+            android:layout_height="80px"
+            android:layout_x="5dp"
+            android:layout_y="4dp"
+            android:background="@drawable/exit" />
+
+        <ImageButton
+            android:id="@+id/user"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_x="502dp"
+            android:layout_y="-13dp"
+            android:background="@drawable/user" />
+
+    </AbsoluteLayout>
+
+		<TextView
+		    android:id="@+id/businesscardsingle_content_abstract"
+		    android:layout_width="300dp"
+		    android:layout_height="wrap_content"
+		    android:layout_below="@+id/Busy"
+		    android:layout_centerHorizontal="true"
+		    android:layout_marginTop="42dp"
+		    android:background="#ffffff"
+		    android:lineSpacingMultiplier="1.0"
+		    android:lines="10"
+		    android:text="information of task..............\n.......\n........\n........\n........\n.......\n"
+		    android:textColor="#7f7f7f"
+		    android:textSize="20sp" />
+
+		<Button
+		    android:id="@+id/Done"
+		    android:layout_width="140px"
+		    android:layout_height="80px"
+		    android:layout_below="@+id/businesscardsingle_content_abstract"
+		    android:layout_centerHorizontal="true"
+		    android:layout_marginTop="17dp"
+		    android:background="@drawable/shape3"
+		    android:text="Done"
+		    android:textColor="#ffffff"
+		    android:textSize="24sp" />
+
+		<Button
+		    android:id="@+id/Busy"
+		    android:layout_width="200px"
+		    android:layout_height="80px"
+		    android:layout_below="@+id/linearLayout1"
+		    android:layout_marginRight="30dp"
+		    android:layout_marginTop="21dp"
+		    android:layout_toLeftOf="@+id/Done"
+		    android:background="@drawable/shape"
+		    android:text="Busy"
+		    android:textColor="#ffffff"
+		    android:textSize="28sp" />
+
+		<Button
+		    android:id="@+id/Free"
+		    android:layout_width="140px"
+		    android:layout_height="80px"
+		    android:layout_above="@+id/businesscardsingle_content_abstract"
+		    android:layout_toRightOf="@+id/Done"
+		    android:background="@drawable/shape3"
+		    android:text="Free"
+		    android:textColor="#ffffff"
+		    android:textSize="24sp" />
+
+</RelativeLayout>
