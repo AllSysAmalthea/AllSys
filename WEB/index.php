@@ -125,8 +125,8 @@
                 	<h2>感动你我</h2>
                   <div class="wrapper">
                     <img src="./static/images/voluteer.jpg" alt="" class="img-indent">
-                    <h4>她是xxx..介绍 ...<br><br> </h4>
-                    <p>她做了...啊，感人啊！</p>
+                    <h4>她是廖智绵，竹汉旺人<br><br> </h4>
+                    <p>她是一位舞蹈老师，512大地震让她失去了双腿。芦山地震发生后，她怀着一颗感恩的心，赶赴灾区当起了志愿者。她的举动备受关注。但今天她在微博中提到，希望媒体不要再给她打电话了，让她能安心做事。廖智，好样的！加油！</p>
          
                   </div>
                 </div>
@@ -138,16 +138,16 @@
                   	  <h2>最新新闻</h2>
                       <ul class="news">
                       	<li>
-                        	<p class="date"><strong>1</strong>Jun</p>
-                         WTF！要交编译原理！<br><br><br><br>
+                        	<p class="date"><strong>6</strong>Jun</p>
+                         “东方之星”沉船事件已确认396人遇难，46人下落不明。今日举行哀悼活动<br><br><br><br>
                         </li>
                         <li>
-                        	<p class="date"><strong>1</strong>May</p>
-                         你好五月病！<br><br><br><br>
+                        	<p class="date"><strong>2</strong>Jun</p>
+                         赵雯副市长率工作组抵达事发现场，并与现场指挥部对接工作<br><br><br><br>
                         </li>
                         <li>
-                        	<p class="date"><strong>1</strong>Mar</p>
-                          开学咧开学咧！<br><br><br><br>
+                        	<p class="date"><strong>5</strong>Jun</p>
+                          东方之星出水<br><br><br><br>
                         </li>
                       </ul>
                       <a href="#" class="button">Read More</a>
@@ -157,9 +157,9 @@
                 	<div class="grid_4 omega">
                   	<div class="inside">
                   	  <h2>关于我们</h2>
-                      <p><img src="./static/images/we.jpg" alt=""></p>
-                      <p class="p3">这就是我们的照片哦！漂亮吧！
-                      <br>我们就是美丽与智慧的化身啊，小学生！<br><br><br><br><br><br></p>
+                      <p><img src="./static/images/we1.jpg" alt=""></p>
+                      <p class="p3">只要人人都献出一点爱，世界将变成美好的人间
+                      <br>请关注我们，和我们一起做出努力<br><br><br><br><br><br></p>
                       <a href="#" class="button">Read More</a>
                       <!--这里直接链接到about Amalthea？-->
                   	</div>
