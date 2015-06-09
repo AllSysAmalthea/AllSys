@@ -63,7 +63,7 @@ function interval()
             //$newsarray = new Array();
             $newsn = 0;
             $now = 0;
-            $output = '<marquee height="200" weight="771" direction="up" scrollamount="2" onmouseout="this.start()" onmouseover="this.stop()">';
+            $output = '<marquee height="200" weight="771" direction="up" scrollamount="4" onmouseout="this.start()" onmouseover="this.stop()">';
             while($row = mysql_fetch_array($result)){  
                 $newsarray[$newsn] = "<p>新闻日期：".$row['date']."</p><p>新闻通讯员：".$row['Author']."</p><p>".$row['NEWS']."</p>";
                 echo "<script>newsarray[newsn] = '".$newsarray[$newsn]."';</script>";
@@ -104,7 +104,8 @@ function interval()
                 
                     while($row = mysql_fetch_array($result)){  
                         $shno = $row['Shno'];
-                        $shoutput .= "<tr><td><a href=query.php?sid=".$shno.">".$row['SHname']."</a></td><td>".$row['SHaddress']."</td><td>".$row['Shnow']."/".$row['Shlimit']."</td><td>正常</td></tr>";
+                        $shoutput .= "<tr><td><a href=query.php?sid=".$shno.">".$row['SHname']."</a>";
+                        $shoutput .="</td><td>".$row['SHaddress']."</td><td>".$row['Shnow']."/".$row['Shlimit']."</td><td>正常</td></tr>";
                     }
                     echo $shoutput;
                 ?>
@@ -123,7 +124,8 @@ function interval()
                         $userid = $row['ID'];
                         $name = mysql_query("select Name from citizen where ID = '$userid';");
                         $name = mysql_fetch_array($name)[0];
-                        $voutput .= "<tr><td><a href='query.php?id=".$userid."'>".$row['ID']."</a></td><td>".$name."</td><td>".$row['Vstatus']."</td></tr>";
+                        $voutput .= "<tr><td><a href='query.php?id=".$userid."'>".$row['ID']."</a>";
+                        $voutput .= "</td><td>".$name."</td><td>".$row['Vstatus']."</td></tr>";
                     }
                     echo $voutput;
                 ?>

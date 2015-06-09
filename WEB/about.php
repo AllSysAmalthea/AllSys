@@ -54,7 +54,9 @@
 					</div>
 					<div class="introduction">
 						<h3>开发者A</h3>
-						<p>人生赢家.人生赢家.人生赢家.人生赢家.</p>
+						<p>姓名.</p>
+                        <p>性别</p>
+                        <p>他是XXXX</p>
 					</div>
 			</div>
 			<div class="Info_right">

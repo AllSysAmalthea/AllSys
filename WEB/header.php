@@ -9,6 +9,8 @@
     $_cur5 = "";
     $_cur6 = "";
     $_cur7 = "";
+    $_cur8 = "";
+    $_cur9 = "";
 	switch($cur_url){
 		case "/index.php": $_cur1 = "active"; break;
 		case "/area.php": $_cur2 = "active"; break;
@@ -17,6 +19,8 @@
         case "/admin.php" : $_cur5 = "active"; break;
         case "/request.php" : $_cur6 = "active"; break;
         case "/about.php" : $_cur7 = "active"; break;
+        case "/arealist.php" : $_cur8 = "active"; break;
+ case "/inform.php" : $_cur9 = "active"; break;
     }
 ?>
 <style>
@@ -51,13 +55,33 @@
 			?>
 				
 			<ul class="nav">
-				<li class="<?php echo $_cur1;?>"><a href="index.php">Home</a></li>
-				<li class="<?php echo $_cur2;?>"><a href="area.php">Area</a></li>
-				<li class="<?php echo $_cur3;?>"><a href="donate.php">Donate</a></li>
-                <li class="<?php echo $_cur4;?>"><a href="query.php">Query</a></li>
-                <li class="<?php echo $_cur5;?>"><a href="admin.php">Admin</a></li>
-                <li class="<?php echo $_cur6;?>"><a href="request.php">任务请求</a></li>
-				<li class="<?php echo $_cur7;?>"><a href="about.php">About Amalthea</a></li>
+				<li class="<?php echo $_cur1;?>">
+                    <a href="index.php">Home</a>
+                </li>
+				<li class="<?php echo $_cur2;?>">
+                    <a href="area.php">Area</a>
+                </li>
+				<li class="<?php echo $_cur3;?>">
+                    <a href="donate.php">Donate</a>
+                </li>
+                <li class="<?php echo $_cur4;?>">
+                    <a href="query.php">Query</a>
+                </li>
+                <li class="<?php echo $_cur5;?>">
+                    <a href="admin.php">Admin</a>
+                </li>
+                <li class="<?php echo $_cur6;?>">
+                    <a href="request.php">任务请求</a>
+                </li>
+				<li class="<?php echo $_cur7;?>">
+                    <a href="about.php">About Amalthea</a>
+                </li>
+                <li class="<?php echo $_cur8;?>">
+                    <a href="arealist.php">Arealist</a>
+                </li>
+                <li class="<?php echo $_cur9;?>">
+                    <a href="inform.php">通知</a>
+                </li>
 			</ul>
 		</div>
 	</div>

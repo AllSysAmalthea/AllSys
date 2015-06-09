@@ -101,7 +101,7 @@
 			$UID = $uid;
 			if ($session_ans !="NO"){
 				$result = mysql_query("select * from taccount where username ='$session_ans'");
-				$row = mysql_fetch_array($result);
+				$row = @mysql_fetch_array($result);
 				$MY_UID = $row[0];
 			}else $MY_UID = -1;
 			if (($UID == $MY_UID)||($MY_UID == 11)){
@@ -112,18 +112,21 @@
 			<hr><br>
 			<table>
 			<tr><td class="lspace">*新闻标题: </td><td> <?php echo $ver; ?> </td></tr>
-			<tr><td class="lspace">*通讯员: </td><td> <a href='user.php?UID=<?php echo $uid;?>'><?php echo $username;?></a></td></tr>
+			<tr><td class="lspace">*通讯员: </td><td> 
+                <a href='user.php?UID=<?php echo $uid;?>'><?php echo $username;?></a>
+            </td></tr>
 			<tr><td class="lspace">*地点: </td><td>Othello</td></tr>
 			<tr><td class="lspace">*时间:</td><td><?php echo $date;?></td></tr>
 			
 			<tr><td class="lspace">*新闻状态:</td>
 			<?php
 				if ($status == 0) echo "<td style='color:red;'> 最新！</td></tr>";
-				if ($status == 1) echo "<td style='color:red;'>  编译中！</td></tr>";
-				if ($status == 2) echo "<td style='color:green;'>  编译成功！</td></tr>";
+				if ($status == 1) echo "<td style='color:red;'>  发布中！</td></tr>";
+				if ($status == 2) echo "<td style='color:green;'>  发布成功！</td></tr>";
 				if ($status == 10){
-					if (($UID == $MY_UID)||($MY_UID == 11)) echo "<td style='color:red;'>  编译失败！<a href='upload/".$CID."/".$UID."/".$progurl.".txt'>点击查看编译信息</a></td></tr>";
-					else echo "<td style='color:red;'>  编译失败！</td></tr>";
+					if (($UID == $MY_UID)||($MY_UID == 11)) 
+                        echo "<td style='color:red;'>  加载失败！<a href='upload/".$CID."/".$UID."/".$progurl.".txt'>点击查看发布信息</a></td></tr>";
+                        else echo "<td style='color:red;'>  加载失败！</td></tr>";
 				}
 			?>
 			</table>
@@ -141,7 +144,7 @@
 			}else $MY_UID = -1;
 			if ($UID == $MY_UID){
 				
-				echo '<div class="span5 codediv alert alert-info codeshow1">显示代码</div>';
+				echo '<div class="span5 codediv alert alert-info codeshow1">显示新闻</div>';
 				echo '<div class="span11 codediv alert alert-info codeshow2">';
 				$codefile = @file('/usr/local/apache/htdocs/upload/1/'.$UID.'/'.$progurl.'');
 				foreach($codefile as $line => $content){
@@ -189,16 +192,16 @@
 						$username2 = $row_UID2[1];
 						
 						if (($row[9] > $row[10])&&($PID1 == $PID)) 
-							$write .="<a href='ai.php?PID=".$PID1."'>".htmlspecialchars($version_PID1)."@".htmlspecialchars($username1)."(".htmlspecialchars($row_PID1[2]).")<img class='size2' src='./static/image/win.png'></a></td><td><a href='ai.php?PID=".$PID2."'>".htmlspecialchars($version_PID2)."@".htmlspecialchars($username2)."(".htmlspecialchars($row_PID2[2]).")</a></td><td>";
+							$write .="<a>".htmlspecialchars($version_PID1)."@".htmlspecialchars($username1)."(".htmlspecialchars($row_PID1[2]).")<img class='size2' src='./static/image/win.png'></a></td><td><a href='ai.php?PID=".$PID2."'>".htmlspecialchars($version_PID2)."@".htmlspecialchars($username2)."(".htmlspecialchars($row_PID2[2]).")</a></td><td>";
 						if (($row[9] < $row[10])&&($PID2 == $PID))
-							$write .="<a href='ai.php?PID=".$PID1."'>".htmlspecialchars($version_PID1)."@".htmlspecialchars($username1)."(".htmlspecialchars($row_PID1[2]).")</a></td><td><a href='ai.php?PID=".$PID2."'>".htmlspecialchars($version_PID2)."@".htmlspecialchars($username2)."(".htmlspecialchars($row_PID2[2]).")<img class='size2' src='./static/image/win.png'></a></td><td>";
+							$write .="<a>".htmlspecialchars($version_PID1)."@".htmlspecialchars($username1)."(".htmlspecialchars($row_PID1[2]).")</a></td><td><a href='ai.php?PID=".$PID2."'>".htmlspecialchars($version_PID2)."@".htmlspecialchars($username2)."(".htmlspecialchars($row_PID2[2]).")<img class='size2' src='./static/image/win.png'></a></td><td>";
 						if (($row[9] < $row[10])&&($PID1 == $PID)) 
-							$write .="<a href='ai.php?PID=".$PID1."'>".htmlspecialchars($version_PID1)."@".htmlspecialchars($username1)."(".htmlspecialchars($row_PID1[2]).")<img class='size2' src='./static/image/lose.png'></a></td><td><a href='ai.php?PID=".$PID2."'>".htmlspecialchars($version_PID2)."@".htmlspecialchars($username2)."(".htmlspecialchars($row_PID2[2]).")</a></td><td>";
+							$write .="<a>".htmlspecialchars($version_PID1)."@".htmlspecialchars($username1)."(".htmlspecialchars($row_PID1[2]).")<img class='size2' src='./static/image/lose.png'></a></td><td><a href='ai.php?PID=".$PID2."'>".htmlspecialchars($version_PID2)."@".htmlspecialchars($username2)."(".htmlspecialchars($row_PID2[2]).")</a></td><td>";
 						if (($row[9] > $row[10])&&($PID2 == $PID))
-							$write .="<a href='ai.php?PID=".$PID1."'>".htmlspecialchars($version_PID1)."@".htmlspecialchars($username1)."(".htmlspecialchars($row_PID1[2]).")</a></td><td><a href='ai.php?PID=".$PID2."'>".htmlspecialchars($version_PID2)."@".htmlspecialchars($username2)."(".htmlspecialchars($row_PID2[2]).")<img class='size2' src='./static/image/lose.png'></a></td><td>";
+							$write .="<a>".htmlspecialchars($version_PID1)."@".htmlspecialchars($username1)."(".htmlspecialchars($row_PID1[2]).")</a></td><td><a href='ai.php?PID=".$PID2."'>".htmlspecialchars($version_PID2)."@".htmlspecialchars($username2)."(".htmlspecialchars($row_PID2[2]).")<img class='size2' src='./static/image/lose.png'></a></td><td>";
 						
 						if ($row[9] == $row[10]) 
-							$write .="<a href='ai.php?PID=".$PID1."'>".htmlspecialchars($version_PID1)."@".htmlspecialchars($username1)."(".htmlspecialchars($row_PID1[2]).")</a></td><td><a href='ai.php?PID=".$PID2."'>".htmlspecialchars($version_PID2)."@".htmlspecialchars($username2)."(".htmlspecialchars($row_PID2[2]).")</a></td><td>";
+							$write .="<a>".htmlspecialchars($version_PID1)."@".htmlspecialchars($username1)."(".htmlspecialchars($row_PID1[2]).")</a></td><td><a href='ai.php?PID=".$PID2."'>".htmlspecialchars($version_PID2)."@".htmlspecialchars($username2)."(".htmlspecialchars($row_PID2[2]).")</a></td><td>";
 						
 						$write .=$row[9].":".$row[10]."</td><td>";
 						//game name
@@ -214,10 +217,10 @@
 						if ($row[7] == 1 ) $status = "<td style='color:red'>running";
 						*/
 						//switch ($row[7])
-						if ($row[7] == 0) $status = "<td style='color:yellow'>未评测"; 
-						else if ($row[7] == 1 ) $status = "<td style='color:blue'>正在评测";
-						else if ($row[7] == 3 ) $status="<td style='color:red'>评测异常";
-						else if ($row[7] == 4 || $row[7] == 5 || $row[7] == 6) $status="<td style='color:green'>评测成功";
+						if ($row[7] == 0) $status = "<td style='color:yellow'>发布失败"; 
+						else if ($row[7] == 1 ) $status = "<td style='color:blue'>正在发布";
+						else if ($row[7] == 3 ) $status="<td style='color:red'>发布异常";
+						else if ($row[7] == 4 || $row[7] == 5 || $row[7] == 6) $status="<td style='color:green'>发布成功";
 						else $status="<td style='color:red'>Undefined";
 						$write = $write.$status."</td><td><a href='player.php?BID=".$row[0]."'><img class='size' src='./static/image/play.png'/></td></tr>";
 						$writeall = $write.$writeall;

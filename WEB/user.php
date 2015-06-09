@@ -62,7 +62,7 @@
 					<?php
 						if ($session_ans !="NO"){
 							$result = mysql_query("select * from taccount where username ='$session_ans'");
-							$row = mysql_fetch_array($result);
+							$row = @mysql_fetch_array($result);
 							$MY_UID = $row[0];
 						}else $MY_UID = -1;
 						if ($UID == ""){
@@ -91,14 +91,14 @@
 						$writepage= "";
 						//$count=mysql_query("select count(*) from tcompetition");
 						//$rs=mysql_fetch_array($count);
-						//$totalPage=$rs[0];    //数据库里读出游戏总数					
+						//$totalPage=$rs[0];   					
 						//for ( $i = 1; $i < $totalPage; $i++) {
 						//	if ($i == $CID) $writepage .="<li class='active'><a href='user.php?username=".$username."&CID=".$CID."'>".$gamename[$i]."</a></li>";
 						//		else $writepage .="<li><a href='user.php?username=".$username."&CID=".$i."'>".$gamename[$i]."</a></li>";
 						//}
 						$i =1;
-						$result = mysql_query("select * from tcompetition");
-						while($row = mysql_fetch_array($result)){
+						$result = @mysql_query("select * from user");
+						while($row = @mysql_fetch_array($result)){
 							if ($i == $CID){
 								$writepage.="<li class='active'><a href='user.php?UID=".$UID."&CID=".$i."'>".$row[7]."</a></li>";
 								$cur_game = $row[7];
@@ -117,11 +117,12 @@
 				<div class="span9 div_left" style="min-height:400px;">
 					<table class="table table-striped">
 						<thead>
-							<caption><h1><?php echo $cur_game;?></h1></caption>
+							<caption><h1><?php echo @$cur_game;?></h1></caption>
 						</thead>
 						<tbody>
 							<?php
-								$write = "<tr><td>NO.</td><td>Submit_Date</td><td>ver</td><td>AI</td><td>天梯排名</td><td>天梯积分</td><td width='10%'>挑战</td><td>Detail</td>";
+								$write = "<tr><td>NO.</td><td>Task_Date</td><td>start</td>";
+                                $write .="<td>end</td><td>状况</td><td>状态</td><td width='10%'></td><td>Detail</td>";
 								//if ($UID == $MY_UID) $write.="<td>replace</td></tr>"; else $write.="</tr>";
 								$write .="</tr>";
 								$current_version_max = 0;
@@ -133,7 +134,7 @@
 								$i = 1;
 								$tprog_num = 0;
 								$replace_list = array();$replace_list_name = array(); $valid_ai_n = 0;
-								while ($row = mysql_fetch_array($result)) {
+								while ($row = @mysql_fetch_array($result)) {
 									$tprog_num++;
 									if ($row[10] == 0) continue;
 									if ($row[2]>$current_version_max) $current_version_max = $row[2];
@@ -153,11 +154,9 @@
 					</table>
 					
 					<div class="div_left alert alert-warning">
-						注意：AI目前每人可以上传2个，如果要下载请到detail中寻找下载按钮 ，如果你想上传新的AI，请选择替换掉一个旧的的AI或直接上传，但总数不得超过2个。2014.6.7
+						注意：user正在构建中
 					</div>
-					<div class="div_left alert alert-error">
-						警告：请在提交AI之前确认处理好超时问题，建议使用get_time()函数，详情见讲义。2014.6.3
-					</div>
+				
 				</div>
 				
 				<div class="span3 pull-right">
@@ -201,10 +200,10 @@
 							
 							$check_ans = "";
 							if ($filename == "") $check_ans = "请输入文件！"; else
-							if ($replace_ai_name == "") $check_ans = "请输入AI的名字！";
+							if ($replace_ai_name == "") $check_ans = "请输入报告名字！";
 							/*
-							if (mb_strlen($replace_ai_name) > 5) $check_ans = "AI名字长度最多为5个中英字符！";
-							if (mb_strlen($replace_ai_declare) > 20) $check_ans = "AI个性签名长度最多为20个中英字符！";
+							if (mb_strlen($replace_ai_name) > 5) $check_ans = "文件名字长度最多为5个中英字符！";
+							if (mb_strlen($replace_ai_declare) > 20) $check_ans = "签名长度最多为20个中英字符！";
 							echo "<script>alert(".$replace_ai_declare.");</script>";
 							echo "<script>alert(".mb_strlen($replace_ai_declare_b).");</script>";
 							*/
@@ -245,13 +244,14 @@
 						}}}
 					?>
 					<?php
-						$write_file_form = '<p style="font-size:25px;">Upload AI</p><form action="" method="post" enctype="multipart/form-data">	
+						$write_file_form = '<p style="font-size:25px;">上传任务报告</p>
+<form action="" method="post" enctype="multipart/form-data">	
 					<div id="replace">';
 					$write_file_form = $write_file_form."<select class='selectpicker' name='replace_id'><option value='0'>直接上传</option>";
 					for ($i = 1; $i <= $valid_ai_n; $i++) 
 						$write_file_form = $write_file_form."<option value='".$replace_list[$i]."'>替换NO.".$i.":".$replace_list_name[$i]."</option>";
-					$write_file_form = $write_file_form.'</select><input type="text" id ="replace_ai_name" name ="replace_ai_name" class="input_box replace_ver" maxlength="5" placeholder="请输入AI的名字,最多5个中英字符">
-					<input type="text" id ="replace_ai_declare" name ="replace_ai_declare" class="input_box replace_ver" maxlength="20" placeholder="AI个性签名，最多20个中英字符">
+					$write_file_form = $write_file_form.'</select><input type="text" id ="replace_ai_name" name ="replace_ai_name" class="input_box replace_ver" maxlength="5" placeholder="请输入任务名称">
+					<input type="text" id ="replace_ai_declare" name ="replace_ai_declare" class="input_box replace_ver" maxlength="20" placeholder="输出备注">
 					</div>
 					<div id="file">
 						<input type="file" name="_file" id="_file"/>

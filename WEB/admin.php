@@ -23,7 +23,8 @@
 		} else echo "<script>alert('Username or Password is wrong!');</script>";
         */
 	if ($flag == 1){
-        $content = '<form id="form" action="" method="post" enctype="multipart/form-data"><table class="table">
+        $content = '<form id="form" action="" method="post" enctype="multipart/form-data">
+                    <table class="table">
                     <thead>
                         
                     </thead>
@@ -37,20 +38,35 @@
                         <tr><td>当前地点</td><td>庇护所123</td></tr>
                         <tr><td>联系方式：</td><td>1234567</td></tr>
                         <tr><td>申请理由：</td><td>物资调度</td></tr>
-                        <tr><td><a class="self-btn">通过</a><a class="self-btn">拒绝</a></td><td><a class="self-btn">prev</a><a class="self-btn">next</a></td></tr>
+                        <tr><td><a class="self-btn">通过</a>
+                                <a class="self-btn">拒绝</a>
+                            </td>
+                            <td><a class="self-btn">prev</a><a class="self-btn">next</a></td>
+                        </tr>
                     </tbody>
                     </table></form>';
 	}else if ($flag == 2){
-        $content = '<form id="form" action="" method="post" enctype="multipart/form-data"><table class="table">
+        $content = '<form id="form" action="" method="post" enctype="multipart/form-data">
+                    <table class="table">
                     <thead>
                         
                     </thead>
                     <tbody id="list">
-                        <tr><td>新闻日期：</td><td><input type="text" class="input-block-level" placeholder="2015-01-01" id="date" name="date"></input></td></tr>
-                        <tr><td>新闻图片：</td><td><input type="text" class="input-block-level" placeholder="url" id="pic" name="pic"></input></td></tr>
-                        <tr><td>新闻作者：</td><td><input type="text" class="input-block-level" placeholder="swind" id="author" name="author"></input></td></tr>
+                        <tr><td>新闻日期：</td>
+                            <td><input type="text" class="input-block-level" placeholder="2015-01-01" id="date" name="date"></input>
+                            </td>
+                        </tr>
+                        <tr><td>新闻图片：</td>
+                            <td><input type="text" class="input-block-level" placeholder="url" id="pic" name="pic"></input>
+                            </td>
+                        </tr>
+                        <tr><td>新闻作者：</td>
+                            <td><input type="text" class="input-block-level" placeholder="swind" id="author" name="author"></input>
+                            </td>
+                        </tr>
                         <tr><td>新闻内容：</td><td><textarea class="textareasize" id="news" name="news"></textarea></td></tr>
-                        <tr><td></td><td><input class="btn btn-big btn-primary" type="submit" id="submit2" name ="submit2" style="width:50%" value ="新闻发布" /></td></tr>
+                        <tr><td></td>
+                <td><input class="btn btn-big btn-primary" type="submit" id="submit2" name ="submit2" style="width:50%" value ="新闻发布" /></td></tr>
                     </tbody>
                     </table></form>';
     }else if ($flag == 3){
@@ -79,7 +95,9 @@
                     <thead></thead>
                     <tbody id="list">
                         <tr bgcolor="#DCDCDC"><td>未处理任务申请：</td><td>'.$count.'</td></tr>
-                        <tr><td>当前申请编号：</td><td><input type="text" class="input-block-level" id="tno" name="tno" value="'.$rs['Tno'].'"></input></td></tr>
+                        <tr><td>当前申请编号：</td>
+                            <td><input type="text" class="input-block-level" id="tno" name="tno" value="'.$rs['Tno'].'"></input>
+                            </td></tr>
                         
                         <tr><td>任务名称：</td><td>'.$rs['Tname'].'</td></tr>
                         <tr><td>申请理由：</td><td>'.$rs['Tremark'].'</td></tr>
@@ -88,7 +106,13 @@
                         <tr><td>志愿者3：</td><td><select id="v3" name="v3">'.$selectlist.'</select></td></tr>
                         <tr><td>志愿者4：</td><td><select id="v4" name="v4">'.$selectlist.'</select></td></tr>
                         <tr><td>志愿者5：</td><td><select id="v5" name="v5">'.$selectlist.'</select></td></tr>
-                        <tr><td><input class="btn btn-big btn-primary tt" type="submit" id="submit31" name ="submit31" value ="通过"/><input class="btn btn-big btn-primary tt" type="submit" id="submit32" name ="submit32" value ="拒绝"/></td><td><a class="self-btn" href="admin.php?flag=3&i='.$prev.'">prev</a><a class="self-btn" href="admin.php?flag=3&i='.$next.'">next</a></td></tr>
+                        <tr><td>
+                            <input class="btn btn-big btn-primary tt" type="submit" id="submit31" name ="submit31" value ="通过"/>
+                            <input class="btn btn-big btn-primary tt" type="submit" id="submit32" name ="submit32" value ="拒绝"/>
+                        </td><td>
+                            <a class="self-btn" href="admin.php?flag=3&i='.$prev.'">prev</a>
+                                <a class="self-btn" href="admin.php?flag=3&i='.$next.'">next</a>
+                        </td></tr>
                     </tbody>
                     </table></form>';
     }else if ($flag == 4){
@@ -116,7 +140,8 @@
                     <tbody id="list">
                         <tr bgcolor="#DCDCDC"><td>进行中任务数量：</td><td>'.$count.'</td><td></td></tr>
                         '.$tasklist.'
-                        <tr><td><a class="self-btn">prev</a></td><td><a class="self-btn">tmp</a></td><td><a class="self-btn">next</a></td></tr>
+                        <tr><td><a class="self-btn">prev</a></td><td><a class="self-btn">tmp</a>
+                        </td><td><a class="self-btn">next</a></td></tr>
                     </tbody>
                     </table></form>';
     }else if ($flag == 5){
@@ -132,8 +157,11 @@
         $content = '<form id="form" action="" method="post" enctype="multipart/form-data"><table class="table">
                     <thead></thead>
                     <tbody id="list">
-                        <tr><td>任务名称：</td><td><input type="text" class="input-block-level" placeholder="不超过20字" id="task" name="task"></input></td></tr>
-                        <tr><td>任务描述：</td><td><textarea id="taskremark" name="taskremark" class="taskareasize"></textarea></td></tr>
+                        <tr><td>任务名称：</td>
+                            <td><input type="text" class="input-block-level" placeholder="不超过20字" id="task" name="task">
+                                </input></td></tr>
+                        <tr><td>任务描述：</td><td><textarea id="taskremark" name="taskremark" class="taskareasize">
+                            </textarea></td></tr>
                         <tr><td>志愿者1：</td><td><select id="v1" name="v1">'.$selectlist.'</select></td></tr>
                         <tr><td>志愿者2：</td><td><select id="v2" name="v2">'.$selectlist.'</select></td></tr>
                         <tr><td>志愿者3：</td><td><select id="v3" name="v3">'.$selectlist.'</select></td></tr>
@@ -148,14 +176,22 @@
                         
                     </thead>
                     <tbody id="list">
-                        <tr><td>庇护所名称：</td><td><input type="text" class="input-block-level" placeholder="不超过20字" id="shname" name="shname"></input></td></tr>
-                        <tr><td>庇护所地址：</td><td><input type="text" class="input-block-level" placeholder="不超过40字" id="addr" name="addr"></input></td></tr>
-                        <tr><td>庇护所描述：</td><td><textarea id ="shremark" name ="shremark" class="taskareasize"></textarea></td></tr>
-                        <tr><td>当前灾民数量：</td><td><input type="text" class="input-block-level" placeholder="不超过20字" id="num" name="num"></input></td></tr>
-                        <tr><td>灾民容纳上限：</td><td><input type="text" class="input-block-level" placeholder="不超过20字" id="max" name="max"></input></td></tr>
-                        <tr><td>经度：</td><td><input type="text" class="input-block-level" placeholder="经度" id="locationX" name="locationX"></input></td></tr>
-                        <tr><td>纬度：</td><td><input type="text" class="input-block-level" placeholder="纬度" id="locationY" name="locationY"></input></td></tr>
-                        <tr><td></td><td><input class="btn btn-big btn-primary" type="submit" id="submit6" name ="submit6" style="width:50%" value ="确认添加" /></td></tr>
+                        <tr><td>庇护所名称：</td>
+                            <td><input type="text" class="input-block-level" placeholder="不超过20字" id="shname" name="shname"></input></td></tr>
+                        <tr><td>庇护所地址：</td>
+                            <td><input type="text" class="input-block-level" placeholder="不超过40字" id="addr" name="addr"></input></td></tr>
+                        <tr><td>庇护所描述：</td>
+                            <td><textarea id ="shremark" name ="shremark" class="taskareasize"></textarea></td></tr>
+                        <tr><td>当前灾民数量：</td>
+                            <td><input type="text" class="input-block-level" placeholder="不超过20字" id="num" name="num"></input></td></tr>
+                        <tr><td>灾民容纳上限：</td>
+                            <td><input type="text" class="input-block-level" placeholder="不超过20字" id="max" name="max"></input></td></tr>
+                        <tr><td>经度：</td>
+                            <td><input type="text" class="input-block-level" placeholder="经度" id="locationX" name="locationX"></input></td></tr>
+                        <tr><td>纬度：</td>
+                            <td><input type="text" class="input-block-level" placeholder="纬度" id="locationY" name="locationY"></input></td></tr>
+                        <tr><td></td><td>
+                            <input class="btn btn-big btn-primary" type="submit" id="submit6" name ="submit6" style="width:50%" value ="确认添加" /></td></tr>
                     </tbody>
                     </table></form>';
     }else if ($flag == 7){
@@ -171,10 +207,14 @@
         $content = '<form id="form" action="" method="post" enctype="multipart/form-data"><table class="table">
                     <thead></thead>
                     <tbody id="list">
-                        <tr><td>物资名称：</td><td><input type="text" class="input-block-level" placeholder="物资名称" id="suName" name="suName"></input></td></tr>
-                        <tr><td>支出数量：</td><td><input type="text" class="input-block-level" placeholder="支出数量" id="suAmount" name="suAmount"></input></td></tr>
-                        <tr><td>支出地点：</td><td><select id="suShno" name="suShno">'.$selectlist.'</select></td></tr>
-                        <tr><td></td><td><input class="btn btn-big btn-primary" type="submit" id="submit7" name ="submit7" style="width:50%" value ="支出提交" /></td></tr>
+                        <tr><td>物资名称：</td>
+                            <td><input type="text" class="input-block-level" placeholder="物资名称" id="suName" name="suName"></input></td></tr>
+                        <tr><td>支出数量：</td>
+                            <td><input type="text" class="input-block-level" placeholder="支出数量" id="suAmount" name="suAmount"></input></td></tr>
+                        <tr><td>支出地点：</td>
+                            <td><select id="suShno" name="suShno">'.$selectlist.'</select></td></tr>
+                        <tr><td></td><td>
+                            <input class="btn btn-big btn-primary" type="submit" id="submit7" name ="submit7" style="width:50%" value ="支出提交" /></td></tr>
                     </tbody>
                     </table></form>';
     }else if ($flag == 8){
@@ -190,12 +230,22 @@
         $content = '<form id="form" action="" method="post" enctype="multipart/form-data"><table class="table">
                     <thead></thead>
                     <tbody id="list">
-                        <tr><td>物资名称：</td><td><input type="text" class="input-block-level" placeholder="物资名称" id="suName" name="suName"></input></td></tr>
-                        <tr><td>物资种类：</td><td><select id="suType" name="suType"><option value="1">1消耗品</option><option value="2">2耐用品</option></select></td></tr>
-                        <tr><td>物资数量：</td><td><input type="text" class="input-block-level" placeholder="物资数量（国际标准单位）" id="suAmount" name="suAmount"></input></td></tr>
-                        <tr><td>接收地点：</td><td><select id="suShno" name="suShno">'.$selectlist.'</select></td></tr>
-                        <tr><td>备注：</td><td><input type="text" class="input-block-level" placeholder="其他信息" id="suRemark" name="suRemark"></input></td></tr>
-                        <tr><td></td><td><input class="btn btn-big btn-primary" type="submit" id="submit8" name ="submit8" style="width:50%" value ="确认收货" /></td></tr>
+                        <tr><td>物资名称：</td>
+                            <td><input type="text" class="input-block-level" placeholder="物资名称" id="suName" name="suName"></input></td></tr>
+                        <tr><td>物资种类：</td><td>
+                            <select id="suType" name="suType">
+                                <option value="1">1消耗品</option>
+                                <option value="2">2耐用品</option>
+                            </select></td></tr>
+                        <tr><td>物资数量：</td><td>
+                            <input type="text" class="input-block-level" placeholder="物资数量（国际标准单位）" id="suAmount" name="suAmount">
+                        </input></td></tr>
+                        <tr><td>接收地点：</td><td>
+                            <select id="suShno" name="suShno">'.$selectlist.'</select></td></tr>
+                        <tr><td>备注：</td><td>
+                            <input type="text" class="input-block-level" placeholder="其他信息" id="suRemark" name="suRemark"></input></td></tr>
+                        <tr><td></td><td>
+                            <input class="btn btn-big btn-primary" type="submit" id="submit8" name ="submit8" style="width:50%" value ="确认收货" /></td></tr>
                     </tbody>
                     </table></form>';
     }else if ($flag == 9){
@@ -204,21 +254,35 @@
                         
                     </thead>
                     <tbody id="list">
-                        <tr><td>灾民身份证号码：</td><td><input type="text" class="input-block-level" placeholder="身份证号码" id="vID" name="vID"></input></td></tr>
-                        <tr><td>灾民姓名：</td><td><input type="text" class="input-block-level" placeholder="姓名" id="vName" name="vName"></input></td></tr>
-                        <tr><td>性别：</td><td><input type="text" class="input-block-level" placeholder="0-男，1-女" id="vSex" name="vSex"></input></td></tr>
-                        <tr><td>民族：</td><td><input type="text" class="input-block-level" placeholder="民族" id="vRace" name="vRace"></input></td></tr>
-                        <tr><td>籍贯：</td><td><input type="text" class="input-block-level" placeholder="籍贯（不超过40位）" id="vHome" name="vHome"></input></td></tr>
-                        <tr><td>灾民血型：</td><td><input type="text" class="input-block-level" placeholder="0-O,1-A,2-B,3-AB" id="vBloodType" name="vBloodType"></input></td></tr>
-                        <tr><td>灾民状态：</td><td><input type="text" class="input-block-level" placeholder="死亡/受伤/失踪/其他" id="vStatus" name="vStatus"></input></td></tr>
-                        <tr><td>亲属及联系方式：</td><td><input type="text" class="input-block-level" placeholder="姓名，电话（不超过40位）" id="vFamily" name="vFamily"></input></td></tr>
-                        <tr><td>事件发生时间：</td><td><input type="text" class="input-block-level" placeholder="2015-01-02" id="vTime" name="vTime"></input></td></tr>
-                        <tr><td>事件发生地点：</td><td><input type="text" class="input-block-level" placeholder="失踪地点（不超过40位）" id="vPlace" name="vPlace"></input></td></tr>
-                        <tr><td>受伤程度：</td><td><input type="text" class="input-block-level" placeholder="轻伤/重伤/痊愈" id="vInjury" name="vInjury"></input></td></tr>
-                        <tr><td>就医医院：</td><td><input type="text" class="input-block-level" placeholder="医院名称及地址（不超过30位）" id="vHospital" name="vHospital"></input></td></tr>
-                        <tr><td>备注：</td><td><input type="text" class="input-block-level" placeholder="其他任何信息（不超过100位）" id="vRemark" name="vRemark"></input></td></tr>
+                        <tr><td>灾民身份证号码：</td>
+                            <td><input type="text" class="input-block-level" placeholder="身份证号码" id="vID" name="vID"></input></td></tr>
+                        <tr><td>灾民姓名：</td><td>
+                            <input type="text" class="input-block-level" placeholder="姓名" id="vName" name="vName"></input></td></tr>
+                        <tr><td>性别：</td><td>
+                            <input type="text" class="input-block-level" placeholder="0-男，1-女" id="vSex" name="vSex"></input></td></tr>
+                        <tr><td>民族：</td><td>
+                            <input type="text" class="input-block-level" placeholder="民族" id="vRace" name="vRace"></input></td></tr>
+                        <tr><td>籍贯：</td><td>
+                            <input type="text" class="input-block-level" placeholder="籍贯（不超过40位）" id="vHome" name="vHome"></input></td></tr>
+                        <tr><td>灾民血型：</td><td>
+                            <input type="text" class="input-block-level" placeholder="0-O,1-A,2-B,3-AB" id="vBloodType" name="vBloodType"></input></td></tr>
+                        <tr><td>灾民状态：</td><td>
+                            <input type="text" class="input-block-level" placeholder="死亡/受伤/失踪/其他" id="vStatus" name="vStatus"></input></td></tr>
+                        <tr><td>亲属及联系方式：</td><td>
+                            <input type="text" class="input-block-level" placeholder="姓名，电话（不超过40位）" id="vFamily" name="vFamily"></input></td></tr>
+                        <tr><td>事件发生时间：</td><td>
+                            <input type="text" class="input-block-level" placeholder="2015-01-02" id="vTime" name="vTime"></input></td></tr>
+                        <tr><td>事件发生地点：</td><td>
+                            <input type="text" class="input-block-level" placeholder="失踪地点（不超过40位）" id="vPlace" name="vPlace"></input></td></tr>
+                        <tr><td>受伤程度：</td><td>
+                            <input type="text" class="input-block-level" placeholder="轻伤/重伤/痊愈" id="vInjury" name="vInjury"></input></td></tr>
+                        <tr><td>就医医院：</td><td>
+                            <input type="text" class="input-block-level" placeholder="医院名称及地址（不超过30位）" id="vHospital" name="vHospital"></input></td></tr>
+                        <tr><td>备注：</td><td>
+                            <input type="text" class="input-block-level" placeholder="其他任何信息（不超过100位）" id="vRemark" name="vRemark"></input></td></tr>
                         
-                        <tr><td></td><td><input class="btn btn-big btn-primary" type="submit" id="submit9" name ="submit9" style="width:50%" value ="确认录入" /></td></tr>
+                        <tr><td></td><td>
+                            <input class="btn btn-big btn-primary" type="submit" id="submit9" name ="submit9" style="width:50%" value ="确认录入" /></td></tr>
                     </tbody>
                     </table></form>';
     }else if ($flag == 10){
@@ -227,24 +291,37 @@
                         
                     </thead>
                     <tbody id="list">
-                        <tr><td>灾民身份证号码：</td><td><input type="text" class="input-block-level" placeholder="身份证号码" id="vID" name="vID"></input></td></tr>
+                        <tr><td>灾民身份证号码：</td><td>
+                            <input type="text" class="input-block-level" placeholder="身份证号码" id="vID" name="vID"></input></td></tr>
 
-                        <tr><td>灾民姓名：</td><td><input type="text" class="input-block-level" placeholder="姓名" id="vName" name="vName"></input></td></tr>
-                        <tr><td>性别：</td><td><input type="text" class="input-block-level" placeholder="0-男，1-女" id="vSex" name="vSex"></input></td></tr>
-                        <tr><td>民族：</td><td><input type="text" class="input-block-level" placeholder="民族" id="vRace" name="vRace"></input></td></tr>
+                        <tr><td>灾民姓名：</td><td>
+                            <input type="text" class="input-block-level" placeholder="姓名" id="vName" name="vName"></input></td></tr>
+                        <tr><td>性别：</td><td>
+                            <input type="text" class="input-block-level" placeholder="0-男，1-女" id="vSex" name="vSex"></input></td></tr>
+                        <tr><td>民族：</td><td>
+                            <input type="text" class="input-block-level" placeholder="民族" id="vRace" name="vRace"></input></td></tr>
 
-                        <tr><td>籍贯：</td><td><input type="text" class="input-block-level" placeholder="籍贯（不超过40位）" id="vHome" name="vHome"></input></td></tr>
-                        <tr><td>灾民血型：</td><td><input type="text" class="input-block-level" placeholder="0-O,1-A,2-B,3-AB" id="vBloodType" name="vBloodType"></input></td></tr>
+                        <tr><td>籍贯：</td><td>
+                            <input type="text" class="input-block-level" placeholder="籍贯（不超过40位）" id="vHome" name="vHome"></input></td></tr>
+                        <tr><td>灾民血型：</td><td>
+                            <input type="text" class="input-block-level" placeholder="0-O,1-A,2-B,3-AB" id="vBloodType" name="vBloodType"></input></td></tr>
 
-                        <tr><td>灾民状态：</td><td><input type="text" class="input-block-level" placeholder="死亡/受伤/失踪/其他" id="vStatus" name="vStatus"></input></td></tr>
-                        <tr><td>亲属及联系方式：</td><td><input type="text" class="input-block-level" placeholder="姓名，电话（不超过40位）" id="vFamily" name="vFamily"></input></td></tr>
-                        <tr><td>事件发生时间：</td><td><input type="text" class="input-block-level" placeholder="2015-01-02" id="vTime" name="vTime"></input></td></tr>
+                        <tr><td>灾民状态：</td><td>
+                            <input type="text" class="input-block-level" placeholder="死亡/受伤/失踪/其他" id="vStatus" name="vStatus"></input></td></tr>
+                        <tr><td>亲属及联系方式：</td><td>
+                            <input type="text" class="input-block-level" placeholder="姓名，电话（不超过40位）" id="vFamily" name="vFamily"></input></td></tr>
+                        <tr><td>事件发生时间：</td><td>
+                            <input type="text" class="input-block-level" placeholder="2015-01-02" id="vTime" name="vTime"></input></td></tr>
 
-                        <tr><td>事件发生地点：</td><td><input type="text" class="input-block-level" placeholder="失踪地点（不超过40位）" id="vPlace" name="vPlace"></input></td></tr>
-                        <tr><td>受伤程度：</td><td><input type="text" class="input-block-level" placeholder="轻伤/重伤/痊愈" id="vInjury" name="vInjury"></input></td></tr>
+                        <tr><td>事件发生地点：</td><td>
+                            <input type="text" class="input-block-level" placeholder="失踪地点（不超过40位）" id="vPlace" name="vPlace"></input></td></tr>
+                        <tr><td>受伤程度：</td><td>
+                            <input type="text" class="input-block-level" placeholder="轻伤/重伤/痊愈" id="vInjury" name="vInjury"></input></td></tr>
 
-                        <tr><td>就医医院：</td><td><input type="text" class="input-block-level" placeholder="医院名称及地址（不超过30位）" id="vHospital" name="vHospital"></input></td></tr>
-                        <tr><td>备注：</td><td><input type="text" class="input-block-level" placeholder="其他任何信息（不超过100位）" id="vRemark" name="vRemark"></input></td></tr>
+                        <tr><td>就医医院：</td><td>
+                            <input type="text" class="input-block-level" placeholder="医院名称及地址（不超过30位）" id="vHospital" name="vHospital"></input></td></tr>
+                        <tr><td>备注：</td><td>
+                            <input type="text" class="input-block-level" placeholder="其他任何信息（不超过100位）" id="vRemark" name="vRemark"></input></td></tr>
                         
                         <tr><td></td><td><input class="btn btn-big btn-primary" type="submit" id="submit10" name ="submit10" style="width:50%" value ="确认修改" /></td></tr>
 
@@ -709,16 +786,16 @@ function interval()
                         
                     </thead>
                     <tbody id="list">
-                        <tr><td>空</td><td class="player"><a href='admin.php?flag=1'>空</a></td></tr>
-                        <tr><td>完成</td><td class="player"><a href='admin.php?flag=2'>新闻发布</a></td></tr>
-                        <tr><td>完成</td><td class="player"><a href='admin.php?flag=3'>任务请求队列</a></td></tr>
-                        <tr><td>进行中</td><td class="player"><a href='admin.php?flag=4'>任务进度</a></td></tr>
-                        <tr><td>完成</td><td class="player"><a href='admin.php?flag=5'>新建任务</a></td></tr>
-                        <tr><td>完成</td><td class="player"><a href='admin.php?flag=6'>添加/修改庇护所</a></td></tr>
-                        <tr><td>完成</td><td class="player"><a href='admin.php?flag=7'>物资支出</a></td></tr>
-                        <tr><td>完成</td><td class="player"><a href='admin.php?flag=8'>物资确认</a></td></tr>
-                        <tr><td>完成</td><td class="player"><a href='admin.php?flag=9'>灾民录入</a></td></tr>
-			<tr><td>完成</td><td class="player"><a href='admin.php?flag=10'>灾民信息修改</a></td></tr>
+                        <tr><td>ID</td><td class="player"><a href='admin.php?flag=1'>管理项目</a></td></tr>
+                        <tr><td>2</td><td class="player"><a href='admin.php?flag=2'>新闻发布</a></td></tr>
+                        <tr><td>3</td><td class="player"><a href='admin.php?flag=3'>任务请求队列</a></td></tr>
+                        <tr><td>4</td><td class="player"><a href='admin.php?flag=4'>任务进度</a></td></tr>
+                        <tr><td>5</td><td class="player"><a href='admin.php?flag=5'>新建任务</a></td></tr>
+                        <tr><td>6</td><td class="player"><a href='admin.php?flag=6'>添加/修改庇护所</a></td></tr>
+                        <tr><td>7</td><td class="player"><a href='admin.php?flag=7'>物资支出</a></td></tr>
+                        <tr><td>8</td><td class="player"><a href='admin.php?flag=8'>物资确认</a></td></tr>
+                        <tr><td>9</td><td class="player"><a href='admin.php?flag=9'>灾民录入</a></td></tr>
+                        <tr><td>10</td><td class="player"><a href='admin.php?flag=10'>灾民信息修改</a></td></tr>
                     </tbody>
                     </table>
 				</div>
@@ -741,6 +818,351 @@ function interval()
 	<div id="footer">
 		<?php require_once("footer.php");?>
     </div>
+<script>
 	
+function J() 
+　　　　{ 
+　　　　　var a, b; 
+　　　　　a = new Array(0,1,2,3,4); 
+　　　　　b = a.join("-");
+　　　　　return(b);
+　　　　}  
+
+function SortDemo() 
+　　　　{ 
+　　　　　var a, l; 
+　　　　　a = new Array("X" ,"y" ,"d", "Z", "v","m","r"); 
+　　　　　l = a.sort(); 
+　　　　　return(l); 
+　　　　} 
+
+function Date() 
+　　　{ 
+　　　　var d, s = "Today's date is: "; 
+　　　　d = new Date(); 
+　　　　s += (d.getMonth() + 1) + "/"; 
+　　　　s += d.getDate() + "/"; 
+　　　　s += d.getYear(); 
+　　　　return(s); 
+　　　} 
+
+function DateDemo() 
+　　　{ 
+　　　　var d, day, x, s = "Today is: "; 
+　　　　var x = new Array("Sunday", "Monday", "Tuesday"); 
+　　　　var x = x.concat("Wednesday","Thursday", "Friday"); 
+　　　　var x = x.concat("Saturday"); 
+　　　　d = new Date(); 
+　　　　day = d.getDay(); 
+　　　　return(s += x[day]); 
+　　　} 
+
+function TimeDemo() 
+　　　{ 
+　　　　var d, s = "The current local time is: "; 
+　　　　var c = ":"; 
+　　　　d = new Date(); 
+　　　　s += d.getHours() + c; 
+　　　　s += d.getMinutes() + c; 
+　　　　s += d.getSeconds() + c; 
+　　　　s += d.getMilliseconds(); 
+　　　　return(s); 
+　　　} 
+
+function GetTimeTest() 
+　　　{ 
+　　　　var d, s, t; 
+　　　　var MinMilli = 1000 * 60; 
+　　　　var HrMilli = MinMilli * 60; 
+　　　　var DyMilli = HrMilli * 24; 
+　　　　d = new Date(); 
+　　　　t = d.getTime(); 
+　　　　s = "It's been " 
+　　　　
+　　　　return(s); 
+　　　} 
+function TZDemo() 
+　　　{ 
+　　　　var d, tz, s = "The current local time is "; 
+　　　　d = new Date(); 
+　　　　tz = d.getTimezoneOffset(); 
+　　　　if (tz < 0) 
+　　　　s += tz / 60 + " hours before GMT"; 
+　　　　else if (tz == 0) 
+　　　　s += "GMT"; 
+　　　　else 
+　　　　s += tz / 60 + " hours after GMT"; 
+　　　　return(s); 
+　　　} 
+
+function GetTimeTest(testdate) 
+　　　{ 
+　　　　var d, s, t; 
+　　　　var MinMilli = 1000 * 60; 
+　　　　var HrMilli = MinMilli * 60; 
+　　　　var DyMilli = HrMilli * 24; 
+　　　　d = new Date(); 
+　　　　t = Date.parse(testdate); 
+　　　　s = "There are " 
+　　　　s += Math.round(Math.abs(t / DyMilli)) + " days " 
+　　　　s += "between " + testdate + " and 1/1/70"; 
+　　　　return(s); 
+　　　} 
+
+ function cutstr(str, len) {
+        var temp,
+            icount = 0,
+            patrn = /[^\x00-\xff]/，
+            strre = "";
+        for (var i = 0; i < str.length; i++) {
+            if (icount < len - 1) {
+                temp = str.substr(i, 1);
+                    if (patrn.exec(temp) == null) {
+                       icount = icount + 1
+                } else {
+                    icount = icount + 2
+                }
+                strre += temp
+                } else {
+                break;
+            }
+        }
+        return strre + "..."
+    }
+function ltrim(s)
+{ 
+return s.replace( /^(\s*|　*)/, ""); 
+}
+function rtrim(s){ 
+	return s.replace( /(\s*|　*)$/, ""); 
+}
+	
+	
+    function HtmlEncode(text) {
+        return text.replace(/&/g, '&').replace(/\"/g, '"').replace(/</g, '<').replace(/>/g, '>')
+    }
+	 function isDigit(value) {
+        var patrn = /^[0-9]*$/;
+        if (patrn.exec(value) == null || value == "") {
+            return false
+        } else {
+            return true
+        }
+    }
+	
+	function appendscript(src, text, reload, charset) {
+        var id = hash(src + text);
+        if(!reload && in_array(id, evalscripts)) return;
+        if(reload && $(id)) {
+            $(id).parentNode.removeChild($(id));
+        }
+
+    
+        evalscripts.push(id);
+        var scriptNode = document.createElement("script");
+        scriptNode.type = "text/javascript";
+        scriptNode.id = id;
+        scriptNode.charset = charset ? charset : (BROWSER.firefox ? document.characterSet : document.charset);
+        try {
+            if(src) {
+                scriptNode.src = src;
+                scriptNode.onloadDone = false;
+                scriptNode.onload = function () {
+                    scriptNode.onloadDone = true;
+                    JSLOADED[src] = 1;
+                 };
+                 scriptNode.onreadystatechange = function () {
+                     if((scriptNode.readyState == 'loaded' || scriptNode.readyState == 'complete') && !scriptNode.onloadDone) {
+                        scriptNode.onloadDone = true;
+                        JSLOADED[src] = 1;
+
+                    }
+
+                 };
+
+            } else if(text){
+                scriptNode.text = text;
+            }
+            document.getElementsByTagName('head')[0].appendChild(scriptNode);
+        } catch(e) {}
+    }
+function setCookie(name, value, Hours) {
+        var d = new Date();
+        var offset = 8;
+        var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+        var nd = utc + (3600000 * offset);
+        var exp = new Date(nd);
+        exp.setTime(exp.getTime() + Hours * 60 * 60 * 1000);
+        document.cookie = name + "=" + escape(value) + ";path=/;expires=" + exp.toGMTString() + ";domain=360doc.com;"
+    }
+	
+	 function getCookie(name) {
+        var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+        if (arr != null) return unescape(arr[2]);
+        return null;
+
+    }
+
+	
+	function setHomepage() {
+        if (document.all) {
+            document.body.style.behavior = 'url(#default#homepage)';
+            document.body.setHomePage('http://w3cboy.com')
+        } else if (window.sidebar) {
+            if (window.netscape) {
+                try {
+                   netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
+                } catch(e) {
+                    alert("该操作被浏览器拒绝，如果想启用该功能，请在地址栏内输入 about:config,然后将项 signed.applets.codebase_principal_support 值该为true")
+                    }
+
+            }
+
+            var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+
+            prefs.setCharPref('browser.startup.homepage', 'http://w3cboy.com')
+
+        }
+
+    }
+	
+	 function LoadStyle(url) {
+        try {
+            document.createStyleSheet(url)
+        } catch(e) {
+            var cssLink = document.createElement('link');
+            cssLink.rel = 'stylesheet';
+            cssLink.type = 'text/css';
+            cssLink.href = url;
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(cssLink)
+        }
+		function $(id) {
+        return !id ? null : document.getElementById(id);
+    }
+	function addEventSamp(obj,evt,fn){
+        if(!oTarget){return;}
+        if (obj.addEventListener) {
+            obj.addEventListener(evt, fn, false);
+        }else if(obj.attachEvent){
+            obj.attachEvent('on'+evt,fn);
+        }else{
+            oTarget["on" + sEvtType] = fn;
+        }
+
+    }
+
+function delEvt(obj,evt,fn){
+        if(!obj){return;}
+        if(obj.addEventListener){
+            obj.addEventListener(evt,fn,false);
+        }else if(oTarget.attachEvent){
+            obj.attachEvent("on" + evt,fn);
+        }else{
+            obj["on" + evt] = fn;
+        }
+
+    }
+
+function getUrlState(URL){
+    var xmlhttp = new ActiveXObject("microsoft.xmlhttp");
+    xmlhttp.Open("GET",URL, false); 
+    try{ 
+            xmlhttp.Send();
+    }catch(e){
+    }finally{
+        var result = xmlhttp.responseText;
+        if(result){
+            if(xmlhttp.Status==200){
+                return(true);
+             }else{
+                   return(false);
+             }
+
+         }else{
+
+             return(false);
+
+         }
+
+    }
+
+}
+
+function compressCss (s) {//压缩代码
+    s = s.replace(/\/\*(.|\n)*?\*\//g, ""); //删除注释
+    s = s.replace(/\s*([\{\}\:\;\,])\s*/g, "$1");
+    s = s.replace(/\,[\s\.\#\d]*\{/g, "{"); //容错处理
+    s = s.replace(/;\s*;/g, ";"); //清除连续分号
+    s = s.match(/^\s*(\S+(\s+\S+)*)\s*$/); //去掉首尾空白
+    return (s == null) ? "" : s[1];
+}
+
+function isMobile(){
+
+    if (typeof this._isMobile === 'boolean'){
+
+        return this._isMobile;
+
+    }
+    var screenWidth = this.getScreenWidth();
+    var fixViewPortsExperiment = rendererModel.runningExperiments.FixViewport ||rendererModel.runningExperiments.fixviewport;
+    var fixViewPortsExperimentRunning = fixViewPortsExperiment && (fixViewPortsExperiment.toLowerCase() === "new");
+    if(!fixViewPortsExperiment){
+        if(!this.isAppleMobileDevice()){
+            screenWidth = screenWidth/window.devicePixelRatio;
+        }
+    }
+    var isMobileScreenSize = screenWidth < 600;
+    var isMobileUserAgent = false;
+    this._isMobile = isMobileScreenSize && this.isTouchScreen();
+    return this._isMobile;
+}
+
+function isAppleMobileDevice(){
+    return (/iphone|ipod|ipad|Macintosh/i.test(navigator.userAgent.toLowerCase()));
+}
+
+function getInitZoom(){
+    if(!this._initZoom){
+        var screenWidth = Math.min(screen.height, screen.width);
+        if(this.isAndroidMobileDevice() && !this.isNewChromeOnAndroid()){
+            screenWidth = screenWidth/window.devicePixelRatio;
+        }
+            this._initZoom = screenWidth /document.body.offsetWidth;
+        }
+    return this._initZoom;
+
+}
+function getZoom(){
+    var screenWidth = (Math.abs(window.orientation) === 90) ? Math.max(screen.height, screen.width) : Math.min(screen.height, screen.width);
+    if(this.isAndroidMobileDevice() && !this.isNewChromeOnAndroid()){
+        screenWidth = screenWidth/window.devicePixelRatio;
+    }
+   var FixViewPortsExperiment = rendererModel.runningExperiments.FixViewport || rendererModel.runningExperiments.fixviewport;
+
+    var FixViewPortsExperimentRunning = FixViewPortsExperiment && (FixViewPortsExperiment === "New" || FixViewPortsExperiment === "new");
+    if(FixViewPortsExperimentRunning){
+        return screenWidth / window.innerWidth;
+    }else{
+
+        return screenWidth / document.body.offsetWidth;
+
+    }
+
+}
+function getScreenWidth(){
+    var smallerSide = Math.min(screen.width, screen.height);
+    var fixViewPortsExperiment = rendererModel.runningExperiments.FixViewport || rendererModel.runningExperiments.fixviewport;
+    var fixViewPortsExperimentRunning = fixViewPortsExperiment && (fixViewPortsExperiment.toLowerCase() === "new");
+    if(fixViewPortsExperiment){
+        if(this.isAndroidMobileDevice() && !this.isNewChromeOnAndroid()){
+            smallerSide = smallerSide/window.devicePixelRatio;
+        }
+    }
+    return smallerSide;
+
+}
+    </script>
 </body>
 </html5>

@@ -47,7 +47,7 @@
 		
 		echo "<table><tr><td>Server time:</td><td>".$server_cur_time."</td></tr>";
 		echo "<tr><td>Machine info update time:</td><td>".$server_time."</td></tr></table>";
-		echo "<table class='table table-striped'><thead><tr><th>UID</th><th>Username</th><th>name</th><th>Email</th><th>AI数目监控</th><th>register time</th></tr></thead><tbody>";
+		echo "<table class='table table-striped'><thead><tr><th>UID</th><th>Username</th><th>name</th><th>Email</th><th>志愿者数目</th><th>register time</th></tr></thead><tbody>";
 		
 
 		

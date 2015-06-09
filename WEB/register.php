@@ -105,8 +105,11 @@ if (isset($_POST['submit'])){
 		<?php require_once("header.php");?>
 	</div>
 	<div id="fbody"><ul class="thumbnails">
-		<div class="thumbnail span8 formdiv"><form id="form" action="" method="post" enctype="multipart/form-data" class="form-signin"><table>
-			<thead><h2 class="form-signin-heading">Create new User</h2></thead>
+		<div class="thumbnail span8 formdiv">
+        <form id="form" action="" method="post" enctype="multipart/form-data" class="form-signin"><table>
+			<thead>
+                <h2 class="form-signin-heading">Create new User</h2>
+            </thead>
 			<tbody>
 				<tr>
 					<td>ID*</td>
@@ -154,16 +157,17 @@ if (isset($_POST['submit'])){
 				</tr>
 				<tr>
 					<td></td>
-					<td class="text-center"><input class="btn btn-large btn-primary" type="submit" id="submit" name ="submit" style="width:50%" value ="Register" /></td>
+					<td class="text-center">
+                <input class="btn btn-large btn-primary" type="submit" id="submit" name ="submit" style="width:50%" value ="Register" /></td>
 				</tr> 
 			
 			</tbody>
         </table></form></div>
 		<div id ="inform" class="thumbnail span3 alert alert-success">
 			<p>通知：</p>
-			<p>*暂不对外开放注册！只能凭邀请码注册。2014.4.5</p>
-			<p>*人工智能课邀请码均为学号，且注意username与学号保持一致！2014.5.12</p>
-			<p>*如果注册出现问题，请联系metisai#126.com。2014.5.12</p>
+			<p>*志愿者注册请详细填写信息。2015.5.12</p>
+			<p>*信息请保证真实性，正确性。我们将对您的信息保密。在此我们首先感谢您对灾区的帮助！</p>
+			<p>*如果注册出现问题，请联系amalthea#163.com。2015.5.12</p>
 		</div>
     </ul></div>
 	
