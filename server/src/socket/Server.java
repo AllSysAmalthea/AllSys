@@ -1,5 +1,6 @@
 package socket;
 
+import java.io.EOFException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import message.*;
+import MessageAck.*;
 import sql.Database;
 
 
@@ -51,7 +52,7 @@ class HandleAClient implements Runnable {
 			ObjectOutputStream output = new ObjectOutputStream(socket.getOutputStream());
 			ObjectInputStream input = new ObjectInputStream(socket.getInputStream());
 			while (true) {
-				Message m = (Message) input.readObject();
+				MessageAck m = (MessageAck) input.readObject();
 				switch (m.type) {
 				default:
 					throw new Exception("Unexpected Package Type");
@@ -64,11 +65,13 @@ class HandleAClient implements Runnable {
 				case 5://search
 					output.writeObject(db.searchHandler((search)m));
 					break;
-				/*case 7://task
-					output.writeObject(db.taskHandler((task)m));
-					break;*/
+				case 7://task
+					db.taskHandler((task)m,output);
+					break;
 				}
 			}
+		} catch (EOFException e) {
+			System.out.println("Socket closed. Exit thread");
 		} catch (Exception e) {
 			// TODO 自动生成的 catch 块
 			e.printStackTrace();
