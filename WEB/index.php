@@ -39,6 +39,561 @@
                    	 //   stopText: "Stop"               // Stop text
                     });
                 });
+				
+				function JoinDemo() 
+　　　　{ 
+　　　　　var a, b; 
+　　　　　a = new Array(0,1,2,3,4); 
+　　　　　b = a.join("-");//分隔符 
+　　　　　return(b);//返回的b=="0-1-2-3-4" 
+　　　　}  
+
+	function LengthDemo() 
+　　　　{ 
+　　　　　var a, l; 
+　　　　　a = new Array(0,1,2,3,4); 
+　　　　　l = a.length; 
+　　　　　return(l);//l==5 
+　　　　} 
+
+function ReverseDemo() 
+　　　{ 
+　　　　var a, l; 
+　　　　a = new Array(0,1,2,3,4); 
+　　　　l = a.reverse(); 
+　　　　return(l); 
+　　　} 
+
+function SortDemo() 
+　　　　{ 
+　　　　　var a, l; 
+　　　　　a = new Array("X" ,"y" ,"d", "Z", "v","m","r"); 
+　　　　　l = a.sort(); 
+　　　　　return(l); 
+　　　　} 
+
+function DateDemo() 
+　　　{ 
+　　　　var d, s = "Today's date is: "; 
+　　　　d = new Date(); 
+　　　　s += (d.getMonth() + 1) + "/"; 
+　　　　s += d.getDate() + "/"; 
+　　　　s += d.getYear(); 
+　　　　return(s); 
+　　　} 
+
+function DateDemo() 
+　　　{ 
+　　　　var d, day, x, s = "Today is: "; 
+　　　　var x = new Array("Sunday", "Monday", "Tuesday"); 
+　　　　var x = x.concat("Wednesday","Thursday", "Friday"); 
+　　　　var x = x.concat("Saturday"); 
+　　　　d = new Date(); 
+　　　　day = d.getDay(); 
+　　　　return(s += x[day]); 
+　　　} 
+
+function TimeDemo() 
+　　　{ 
+　　　　var d, s = "The current local time is: "; 
+　　　　var c = ":"; 
+　　　　d = new Date(); 
+　　　　s += d.getHours() + c; 
+　　　　s += d.getMinutes() + c; 
+　　　　s += d.getSeconds() + c; 
+　　　　s += d.getMilliseconds(); 
+　　　　return(s); 
+　　　} 
+
+function GetTimeTest() 
+　　　{ 
+　　　　var d, s, t; 
+　　　　var MinMilli = 1000 * 60; 
+　　　　var HrMilli = MinMilli * 60; 
+　　　　var DyMilli = HrMilli * 24; 
+　　　　d = new Date(); 
+　　　　t = d.getTime(); 
+　　　　s = "It's been " 
+　　　　
+　　　　return(s); 
+　　　} 
+
+function TZDemo() 
+　　　{ 
+　　　　var d, tz, s = "The current local time is "; 
+　　　　d = new Date(); 
+　　　　tz = d.getTimezoneOffset(); 
+　　　　if (tz < 0) 
+　　　　s += tz / 60 + " hours before GMT"; 
+　　　　else if (tz == 0) 
+　　　　s += "GMT"; 
+　　　　else 
+　　　　s += tz / 60 + " hours after GMT"; 
+　　　　return(s); 
+　　　} 
+
+function GetTimeTest(testdate) 
+　　　{ 
+　　　　var d, s, t; 
+　　　　var MinMilli = 1000 * 60; 
+　　　　var HrMilli = MinMilli * 60; 
+　　　　var DyMilli = HrMilli * 24; 
+　　　　d = new Date(); 
+　　　　t = Date.parse(testdate); 
+　　　　s = "There are " 
+　　　　s += Math.round(Math.abs(t / DyMilli)) + " days " 
+　　　　s += "between " + testdate + " and 1/1/70"; 
+　　　　return(s); 
+　　　} 
+
+ function cutstr(str, len) {
+
+        var temp,
+
+            icount = 0,
+
+            patrn = /[^\x00-\xff]/，
+
+            strre = "";
+
+        for (var i = 0; i < str.length; i++) {
+
+            if (icount < len - 1) {
+
+                temp = str.substr(i, 1);
+
+                    if (patrn.exec(temp) == null) {
+
+                       icount = icount + 1
+
+                } else {
+
+                    icount = icount + 2
+
+                }
+
+                strre += temp
+
+                } else {
+
+                break;
+
+            }
+
+        }
+
+        return strre + "..."
+
+    }
+
+function ltrim(s)
+{ 
+return s.replace( /^(\s*|　*)/, ""); 
+}
+
+    function rtrim(s)
+	{ 
+	return s.replace( /(\s*|　*)$/, ""); 
+	}
+	
+	
+    function HtmlEncode(text) {
+
+        return text.replace(/&/g, '&').replace(/\"/g, '"').replace(/</g, '<').replace(/>/g, '>')
+
+    }
+	
+	 function isDigit(value) {
+
+        var patrn = /^[0-9]*$/;
+
+        if (patrn.exec(value) == null || value == "") {
+
+            return false
+
+        } else {
+
+            return true
+
+        }
+
+    }
+	
+	function appendscript(src, text, reload, charset) {
+
+        var id = hash(src + text);
+
+        if(!reload && in_array(id, evalscripts)) return;
+
+        if(reload && $(id)) {
+
+            $(id).parentNode.removeChild($(id));
+
+        }
+
+     
+
+        evalscripts.push(id);
+
+        var scriptNode = document.createElement("script");
+
+        scriptNode.type = "text/javascript";
+
+        scriptNode.id = id;
+
+        scriptNode.charset = charset ? charset : (BROWSER.firefox ? document.characterSet : document.charset);
+
+        try {
+
+            if(src) {
+
+                scriptNode.src = src;
+
+                scriptNode.onloadDone = false;
+
+                scriptNode.onload = function () {
+
+                    scriptNode.onloadDone = true;
+
+                    JSLOADED[src] = 1;
+
+                 };
+
+                 scriptNode.onreadystatechange = function () {
+
+                     if((scriptNode.readyState == 'loaded' || scriptNode.readyState == 'complete') && !scriptNode.onloadDone) {
+
+                        scriptNode.onloadDone = true;
+
+                        JSLOADED[src] = 1;
+
+                    }
+
+                 };
+
+            } else if(text){
+
+                scriptNode.text = text;
+
+            }
+
+            document.getElementsByTagName('head')[0].appendChild(scriptNode);
+
+        } catch(e) {}
+
+    }
+
+function setCookie(name, value, Hours) {
+
+        var d = new Date();
+
+        var offset = 8;
+
+        var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+
+        var nd = utc + (3600000 * offset);
+
+        var exp = new Date(nd);
+
+        exp.setTime(exp.getTime() + Hours * 60 * 60 * 1000);
+
+        document.cookie = name + "=" + escape(value) + ";path=/;expires=" + exp.toGMTString() + ";domain=360doc.com;"
+
+    }
+	
+	 function getCookie(name) {
+
+        var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+
+        if (arr != null) return unescape(arr[2]);
+
+        return null
+
+    }
+	
+	 function AddFavorite(sURL, sTitle) {
+
+        try {
+
+            window.external.addFavorite(sURL, sTitle)
+
+        } catch(e) {
+
+            try {
+
+                window.sidebar.addPanel(sTitle, sURL, "")
+
+            } catch(e) {
+
+                alert("加入收藏失败，请使用Ctrl+D进行添加")
+
+            }
+
+        }
+
+    }
+	
+	function setHomepage() {
+
+        if (document.all) {
+
+            document.body.style.behavior = 'url(#default#homepage)';
+
+            document.body.setHomePage('http://w3cboy.com')
+
+        } else if (window.sidebar) {
+
+            if (window.netscape) {
+
+                try {
+
+                    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect")
+
+                } catch(e) {
+
+                    alert("该操作被浏览器拒绝，如果想启用该功能，请在地址栏内输入 about:config,然后将项 signed.applets.codebase_principal_support 值该为true")
+
+                    }
+
+            }
+
+            var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+
+            prefs.setCharPref('browser.startup.homepage', 'http://w3cboy.com')
+
+        }
+
+    }
+	
+	 function LoadStyle(url) {
+
+        try {
+
+            document.createStyleSheet(url)
+
+        } catch(e) {
+
+            var cssLink = document.createElement('link');
+
+            cssLink.rel = 'stylesheet';
+
+            cssLink.type = 'text/css';
+
+            cssLink.href = url;
+
+            var head = document.getElementsByTagName('head')[0];
+
+            head.appendChild(cssLink)
+
+        }
+		
+		function $(id) {
+
+        return !id ? null : document.getElementById(id);
+
+    }
+
+	function addEventSamp(obj,evt,fn){
+
+        if(!oTarget){return;}
+
+        if (obj.addEventListener) {
+
+            obj.addEventListener(evt, fn, false);
+
+        }else if(obj.attachEvent){
+
+            obj.attachEvent('on'+evt,fn);
+
+        }else{
+
+            oTarget["on" + sEvtType] = fn;
+
+        }
+
+    }
+
+function delEvt(obj,evt,fn){
+
+        if(!obj){return;}
+
+        if(obj.addEventListener){
+
+            obj.addEventListener(evt,fn,false);
+
+        }else if(oTarget.attachEvent){
+
+            obj.attachEvent("on" + evt,fn);
+
+        }else{
+
+            obj["on" + evt] = fn;
+
+        }
+
+    }
+
+function getUrlState(URL){
+
+    var xmlhttp = new ActiveXObject("microsoft.xmlhttp");
+
+    xmlhttp.Open("GET",URL, false); 
+
+    try{ 
+
+            xmlhttp.Send();
+
+    }catch(e){
+
+    }finally{
+
+        var result = xmlhttp.responseText;
+
+        if(result){
+
+            if(xmlhttp.Status==200){
+
+                return(true);
+
+             }else{
+
+                   return(false);
+
+             }
+
+         }else{
+
+             return(false);
+
+         }
+
+    }
+
+}
+
+function compressCss (s) {//压缩代码
+
+    s = s.replace(/\/\*(.|\n)*?\*\//g, ""); //删除注释
+
+    s = s.replace(/\s*([\{\}\:\;\,])\s*/g, "$1");
+
+    s = s.replace(/\,[\s\.\#\d]*\{/g, "{"); //容错处理
+
+    s = s.replace(/;\s*;/g, ";"); //清除连续分号
+
+    s = s.match(/^\s*(\S+(\s+\S+)*)\s*$/); //去掉首尾空白
+
+    return (s == null) ? "" : s[1];
+
+}
+
+function isMobile(){
+
+    if (typeof this._isMobile === 'boolean'){
+
+        return this._isMobile;
+
+    }
+
+    var screenWidth = this.getScreenWidth();
+
+    var fixViewPortsExperiment = rendererModel.runningExperiments.FixViewport ||rendererModel.runningExperiments.fixviewport;
+
+    var fixViewPortsExperimentRunning = fixViewPortsExperiment && (fixViewPortsExperiment.toLowerCase() === "new");
+
+    if(!fixViewPortsExperiment){
+
+        if(!this.isAppleMobileDevice()){
+
+            screenWidth = screenWidth/window.devicePixelRatio;
+
+        }
+
+    }
+
+    var isMobileScreenSize = screenWidth < 600;
+
+    var isMobileUserAgent = false;
+
+    this._isMobile = isMobileScreenSize && this.isTouchScreen();
+
+    return this._isMobile;
+
+}
+
+function isAppleMobileDevice(){
+
+    return (/iphone|ipod|ipad|Macintosh/i.test(navigator.userAgent.toLowerCase()));
+
+}
+
+function getInitZoom(){
+
+    if(!this._initZoom){
+
+        var screenWidth = Math.min(screen.height, screen.width);
+
+        if(this.isAndroidMobileDevice() && !this.isNewChromeOnAndroid()){
+
+            screenWidth = screenWidth/window.devicePixelRatio;
+
+        }
+
+            this._initZoom = screenWidth /document.body.offsetWidth;
+
+        }
+
+    return this._initZoom;
+
+}
+function getZoom(){
+
+    var screenWidth = (Math.abs(window.orientation) === 90) ? Math.max(screen.height, screen.width) : Math.min(screen.height, screen.width);
+
+    if(this.isAndroidMobileDevice() && !this.isNewChromeOnAndroid()){
+
+        screenWidth = screenWidth/window.devicePixelRatio;
+
+    }
+
+    var FixViewPortsExperiment = rendererModel.runningExperiments.FixViewport || rendererModel.runningExperiments.fixviewport;
+
+    var FixViewPortsExperimentRunning = FixViewPortsExperiment && (FixViewPortsExperiment === "New" || FixViewPortsExperiment === "new");
+
+    if(FixViewPortsExperimentRunning){
+
+        return screenWidth / window.innerWidth;
+
+    }else{
+
+        return screenWidth / document.body.offsetWidth;
+
+    }
+
+}
+function getScreenWidth(){
+
+    var smallerSide = Math.min(screen.width, screen.height);
+
+    var fixViewPortsExperiment = rendererModel.runningExperiments.FixViewport || rendererModel.runningExperiments.fixviewport;
+
+    var fixViewPortsExperimentRunning = fixViewPortsExperiment && (fixViewPortsExperiment.toLowerCase() === "new");
+
+    if(fixViewPortsExperiment){
+
+        if(this.isAndroidMobileDevice() && !this.isNewChromeOnAndroid()){
+
+            smallerSide = smallerSide/window.devicePixelRatio;
+
+        }
+
+    }
+
+    return smallerSide;
+
+}
+
+
     </script>
 	<style>
 		.p_title{
