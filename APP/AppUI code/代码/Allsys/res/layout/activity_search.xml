@@ -24,7 +24,7 @@
             android:singleLine="true"
             android:text="AllSysAmalthea"
             android:textColor="#ffffff"
-            android:textSize="30sp"
+            android:textSize="25sp"
             android:textStyle="bold" />
 
         <ImageButton
@@ -47,18 +47,17 @@
 
     <TextView
         android:id="@+id/searchresult"
-        android:layout_width="400dp"
-        android:layout_height="650dp"
+        android:layout_width="265dp"
+        android:layout_height="400dp"
         android:layout_alignLeft="@+id/searchContent"
-        android:layout_alignRight="@+id/Search"
         android:layout_below="@+id/searchContent"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="36dp"
         android:background="#ffffff"
         android:lineSpacingMultiplier="1.0"
         android:lines="10"
-        android:text="information of task..............\n.......\n........\n........\n........\n.......\n"
+        android:text="without task"
         android:textColor="#7f7f7f"
-        android:textSize="20sp" />
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/searchContent"
@@ -68,8 +67,8 @@
         android:layout_below="@+id/linearLayout1"
         android:layout_marginLeft="59dp"
         android:layout_marginTop="40dp"
-        android:ems="10"
-        android:textSize="26sp" >
+        android:ems="18"
+        android:textSize="14sp" >
 
         <requestFocus />
     </EditText>
@@ -78,13 +77,11 @@
         android:id="@+id/Search"
         android:layout_width="150px"
         android:layout_height="80px"
-        android:layout_alignBaseline="@+id/searchContent"
-        android:layout_alignBottom="@+id/searchContent"
-        android:layout_marginLeft="37dp"
-        android:layout_toRightOf="@+id/searchContent"
+        android:layout_alignRight="@+id/searchresult"
+        android:layout_alignTop="@+id/searchContent"
         android:background="@drawable/shape3"
         android:text="Search"
         android:textColor="#ffffff"
-        android:textSize="28sp" />
+        android:textSize="16sp" />
 
 </RelativeLayout>

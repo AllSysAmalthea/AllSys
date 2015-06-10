@@ -24,7 +24,7 @@
             android:text="AllSysAmalthea"
             android:background="#A4D3EE"
             android:textColor="#ffffff"
-            android:textSize="30sp"
+            android:textSize="25sp"
             android:textStyle="bold" />
 
         <ImageButton
@@ -40,22 +40,22 @@
      <TextView
          android:id="@+id/textview1"
          android:layout_width="200px"
-         android:layout_height="50px"
+         android:layout_height="68px"
          android:layout_alignLeft="@+id/myImageView1"
          android:layout_below="@+id/myImageView1"
-         android:layout_marginTop="40dp"
+         android:layout_marginTop="30dp"
          android:textColor="#000000"
-         android:textSize="26sp"
+         android:textSize="22sp"
          android:text="Name" />
 
      <EditText
          android:id="@+id/Name"
          android:layout_width="200px"
-         android:layout_height="40px"
+         android:layout_height="68px"
          android:layout_alignRight="@+id/myImageView1"
          android:layout_alignTop="@+id/textview1"
          android:ems="10"
-         android:textSize="26sp"
+         android:textSize="15sp"
          android:inputType="textPersonName" >
 
          <requestFocus />
@@ -64,108 +64,112 @@
      <EditText
          android:id="@+id/Tel"
          android:layout_width="200px"
-         android:layout_height="40px"
+         android:layout_height="68px"
          android:layout_alignLeft="@+id/Name"
          android:layout_alignTop="@+id/textView2"
          android:ems="10" 
-         android:textSize="26sp"/>
+         android:textSize="15sp"/>
 
      <TextView
          android:id="@+id/textView3"
          android:layout_width="200px"
-         android:layout_height="40px"
+         android:layout_height="68px"
          android:layout_alignLeft="@+id/textView2"
          android:layout_below="@+id/textView2"
-         android:layout_marginTop="20dp"
+         android:layout_marginTop="12dp"
          android:text="ID" 
          android:textColor="#000000"
-         android:textSize="26sp"/>
+         android:textSize="22sp"/>
 
      <EditText
          android:id="@+id/ID"
          android:layout_width="200px"
-         android:layout_height="40px"
+         android:layout_height="68px"
          android:layout_alignLeft="@+id/Tel"
          android:layout_alignTop="@+id/textView3"
          android:ems="10"
-         android:textSize="26sp" />
+         android:textSize="15sp" />
 
      <TextView
          android:id="@+id/textView4"
          android:layout_width="200px"
-         android:layout_height="40px"
+         android:layout_height="68px"
          android:layout_alignLeft="@+id/textView3"
          android:layout_below="@+id/textView3"
-         android:layout_marginTop="20dp"
+         android:layout_marginTop="12dp"
          android:text="Password" 
          android:textColor="#000000"
-         android:textSize="26sp" />
+         android:textSize="22sp" />
 
      <EditText
          android:id="@+id/Password"
          android:layout_width="200px"
-         android:layout_height="40px"
+         android:layout_height="68px"
          android:layout_alignLeft="@+id/ID"
          android:layout_alignTop="@+id/textView4"
          android:ems="10"
+         android:textSize="15sp"
          android:inputType="textPassword" />
 
      <TextView
          android:id="@+id/textView5"
          android:layout_width="200px"
-         android:layout_height="40px"
+         android:layout_height="68px"
          android:layout_alignLeft="@+id/textView4"
          android:layout_below="@+id/textView4"
-         android:layout_marginTop="20dp"
+         android:layout_marginTop="12dp"
          android:text="Confirm" 
          android:textColor="#000000"
-         android:textSize="26sp" />
+         android:textSize="22sp" />
 
      <EditText
          android:id="@+id/Confirm"
          android:layout_width="200px"
-         android:layout_height="40px"
+         android:layout_height="68px"
          android:layout_alignLeft="@+id/Password"
          android:layout_alignTop="@+id/textView5"
          android:ems="10"
+         android:textSize="15sp"
          android:inputType="textPassword" />
 
      <TextView
          android:id="@+id/textView6"
          android:layout_width="200px"
-         android:layout_height="40px"
+         android:layout_height="68px"
          android:layout_alignLeft="@+id/textView5"
          android:layout_below="@+id/textView5"
-         android:layout_marginTop="20dp"
+         android:layout_marginTop="12dp"
          android:text="Blood" 
          android:textColor="#000000"
-         android:textSize="26sp" />
+         android:textSize="22sp" />
 
      <EditText
          android:id="@+id/Blood"
          android:layout_width="200px"
-         android:layout_height="40px"
+         android:layout_height="68px"
          android:layout_alignLeft="@+id/Confirm"
          android:layout_alignTop="@+id/textView6"
+         android:textSize="15sp"
          android:ems="10" />
 
      <TextView
          android:id="@+id/textView7"
          android:layout_width="200px"
-         android:layout_height="40px"
+         android:layout_height="68px"
          android:layout_alignLeft="@+id/textView6"
          android:layout_below="@+id/textView6"
-         android:layout_marginTop="20dp"
+         android:layout_marginTop="12dp"
          android:text="Addr" 
          android:textColor="#000000"
-         android:textSize="26sp" />
+         android:textSize="22sp" />
 
      <EditText
          android:id="@+id/Addr"
          android:layout_width="200px"
-         android:layout_height="40px"
+         android:layout_height="68px"
          android:layout_alignLeft="@+id/Blood"
          android:layout_alignTop="@+id/textView7"
+         android:textSize="15sp"
          android:ems="10" />
 
 	<Button
@@ -174,30 +178,30 @@
 	    android:layout_height="70px"
 	    android:layout_below="@+id/textView7"
 	    android:layout_centerHorizontal="true"
-	    android:layout_marginTop="40dp"
+	    android:layout_marginTop="20dp"
 	    android:background="@drawable/shape3"
 	    android:text="Register"
 	    android:textColor="#ffffff"
-	    android:textSize="26sp" />
+	    android:textSize="16sp" />
 
 	<ImageView
 	    android:id="@+id/myImageView1"
-	    android:layout_width="450px"
-	    android:layout_height="250px"
+	    android:layout_width="460px"
+	    android:layout_height="260px"
 	    android:layout_below="@+id/linearLayout1"
 	    android:layout_centerHorizontal="true"
 	    android:layout_marginTop="26dp"
-	    android:background="@drawable/news2" />
+	    android:background="@drawable/register_head" />
 
 	<TextView
 	    android:id="@+id/textView2"
 	    android:layout_width="200px"
-	    android:layout_height="40px"
+	    android:layout_height="68px"
 	    android:layout_alignLeft="@+id/textview1"
 	    android:layout_below="@+id/textview1"
-	    android:layout_marginTop="20dp"
+	    android:layout_marginTop="15dp"
 	    android:text="Tel"
 	    android:textColor="#000000"
-	    android:textSize="26sp" />
+	    android:textSize="22sp" />
 
 </RelativeLayout>
