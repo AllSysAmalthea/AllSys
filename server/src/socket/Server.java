@@ -6,19 +6,33 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import MessageAck.*;
+import MessageAck.MessageAck;
+import MessageAck.location;
+import MessageAck.login;
+import MessageAck.register;
+import MessageAck.search;
+import MessageAck.task;
 import sql.Database;
 
+/**
+ * Server main class
+ * Listening Android application
+ * @author FormalHHH
+ *
+ */
 
 public class Server {
-	public int serverPort = 8000; 
+	private int serverPort; 
 	private Database db;
-	ServerSocket servsock;
+	private ServerSocket servsock;
 	Server() {
+		this("8000");
+	}
+	Server(String s) {
+		serverPort = Integer.parseInt(s);
 		ExecutorService threadPool = Executors.newCachedThreadPool();
 		db = new Database();
 		try {
@@ -34,7 +48,32 @@ public class Server {
 			e.printStackTrace();
 		}
 	}
+	public int getServerPort() {
+		return serverPort;
+	}
+	public void setServerPort(int serverPort) {
+		this.serverPort = serverPort;
+	}
+	public Database getDb() {
+		return db;
+	}
+	public void setDb(Database db) {
+		this.db = db;
+	}
+	public ServerSocket getServsock() {
+		return servsock;
+	}
+	public void setServsock(ServerSocket servsock) {
+		this.servsock = servsock;
+	}
 }
+
+/**
+ * Handler thread
+ * Deal with Android messages
+ * @author FormalHHH
+ *
+ */
 
 class HandleAClient implements Runnable {
 	private Socket socket;
@@ -68,6 +107,8 @@ class HandleAClient implements Runnable {
 				case 7://task
 					db.taskHandler((task)m,output);
 					break;
+				case 9:
+					db.locationHandler((location)m);
 				}
 			}
 		} catch (EOFException e) {
@@ -77,5 +118,17 @@ class HandleAClient implements Runnable {
 			e.printStackTrace();
 		}
 		
+	}
+	public Socket getSocket() {
+		return socket;
+	}
+	public void setSocket(Socket socket) {
+		this.socket = socket;
+	}
+	public Database getDb() {
+		return db;
+	}
+	public void setDb(Database db) {
+		this.db = db;
 	}
 }

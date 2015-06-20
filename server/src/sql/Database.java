@@ -2,24 +2,40 @@ package sql;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.net.Socket;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import MessageAck.*;
+import MessageAck.location;
+import MessageAck.login;
+import MessageAck.loginack;
+import MessageAck.register;
+import MessageAck.registerack;
+import MessageAck.search;
+import MessageAck.searchack;
+import MessageAck.task;
+import MessageAck.taskack;
+
+/**
+ * Database-Server connection interface
+ * Handlers of all messages
+ * @author FormalHHH
+ *
+ */
 
 public class Database {
-	Connection conn;
-	Statement stmt;
-	ResultSet task;
-	int tno;
-	String tname,tremark;
-	boolean free = true;
-	boolean havetask = false;
+	private Connection conn;
+	private Statement stmt;
+	private ResultSet task;
+	private int tno;
+	private String tname,tremark;
+	private boolean free;
+	private boolean havetask;
 	public Database () {
+		free = true;
+		havetask = false;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -273,5 +289,57 @@ public class Database {
 				break;
 			}
 		}
+	}
+	public Connection getConn() {
+		return conn;
+	}
+	public void setConn(Connection conn) {
+		this.conn = conn;
+	}
+	public Statement getStmt() {
+		return stmt;
+	}
+	public void setStmt(Statement stmt) {
+		this.stmt = stmt;
+	}
+	public ResultSet getTask() {
+		return task;
+	}
+	public void setTask(ResultSet task) {
+		this.task = task;
+	}
+	public int getTno() {
+		return tno;
+	}
+	public void setTno(int tno) {
+		this.tno = tno;
+	}
+	public String getTname() {
+		return tname;
+	}
+	public void setTname(String tname) {
+		this.tname = tname;
+	}
+	public String getTremark() {
+		return tremark;
+	}
+	public void setTremark(String tremark) {
+		this.tremark = tremark;
+	}
+	public boolean isFree() {
+		return free;
+	}
+	public void setFree(boolean free) {
+		this.free = free;
+	}
+	public boolean isHavetask() {
+		return havetask;
+	}
+	public void setHavetask(boolean havetask) {
+		this.havetask = havetask;
+	}
+	public void locationHandler(location m) {
+		// TODO 自动生成的方法存根
+		
 	}
 }

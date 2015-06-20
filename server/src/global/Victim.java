@@ -3,7 +3,7 @@ package global;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/*
+/**
  * 灾民
  * status：状态
  * 父类：ManInfo

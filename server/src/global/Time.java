@@ -1,6 +1,6 @@
 package global;
 
-/*
+/**
  * 自用时间类，可看情况删除
  */
 public class Time {
