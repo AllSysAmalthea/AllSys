@@ -15,18 +15,27 @@ import java.util.regex.Pattern;
  * 
  */
 public class ManInfo {
-	String name;
-	String race;
-	String ID;
-	String huji;
-	String bloodtype;
-	String relativeName;
-	String relativeContact;
+	private String name;
+	private String race;
+	private String ID;
+	private String huji;
+	private String bloodtype;
+	private String relativeName;
+	private String relativeContact;
 	
 	/*
 	 * 使用{}分隔的字符串构造
 	 * 格式为{"name"}{"race"}{"ID"}{"huji"}{"bloodtype"}{"relativeName"}{"relativeContact"}
 	 */
+	ManInfo() {
+		name = "";
+		race = "";
+		ID = "";
+		huji = "";
+		bloodtype = "";
+		relativeName = "";
+		relativeContact = "";
+	}
 	ManInfo(String info) {
 		Pattern pattern=Pattern.compile("\\{\".*\"\\}");
 		Matcher matcher=pattern.matcher(info);

@@ -4,12 +4,15 @@ package global;
  * 自用时间类，可看情况删除
  */
 public class Time {
-	int year;
-	int month;
-	int day;
-	int hour;
-	int minute;
-	int second;
+	private int year;
+	private int month;
+	private int day;
+	private int hour;
+	private int minute;
+	private int second;
+	Time() {
+		
+	}
 	Time(int y,int m,int d,int h,int min,int sec) {
 		setYear(y);
 		setMonth(m);

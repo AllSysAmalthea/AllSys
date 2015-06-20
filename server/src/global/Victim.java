@@ -10,12 +10,15 @@ import java.util.regex.Pattern;
  * 子类：MissingVictim、DeadVictim、InjuredVictim
  */
 public class Victim extends ManInfo {
-	int status;
+	private int status;
 	
 	/*
 	 * 使用{}分隔的字符串构造
 	 * 格式为{}{}{}{}{}{}{}{status}
 	 */
+	Victim() {
+		super();
+	}
 	Victim(String info) {
 		super(info);
 		Pattern pattern=Pattern.compile("\\{[0-2]\\}");
