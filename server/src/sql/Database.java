@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Vector;
 
 import MessageAck.location;
 import MessageAck.login;
@@ -33,7 +34,9 @@ public class Database {
 	private String tname,tremark;
 	private boolean free;
 	private boolean havetask;
+	private Vector<location> v;
 	public Database () {
+		v = new Vector<location>();
 		free = true;
 		havetask = false;
 		try {
@@ -340,6 +343,12 @@ public class Database {
 	}
 	public void locationHandler(location m) {
 		// TODO 自动生成的方法存根
-		
+		v.add(m);
+	}
+	public Vector<location> getV() {
+		return v;
+	}
+	public void setV(Vector<location> v) {
+		this.v = v;
 	}
 }
